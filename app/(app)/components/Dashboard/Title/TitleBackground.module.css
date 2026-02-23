@@ -1,0 +1,34 @@
+/* TitleBackground.module.css */
+
+.imageWrapper {
+  width: 100%;
+  height: auto;
+}
+
+/* Mobile: 0px - 640px */
+@media (max-width: 639px) {
+  .imageWrapper {
+    height: 10vh;
+  }
+}
+
+/* Tablet: 640px - 1024px */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .imageWrapper {
+    height: 300px;
+  }
+}
+
+/* Desktop: 1024px - 1536px */
+@media (min-width: 1024px) and (max-width: 1535px) {
+  .imageWrapper {
+    height: 26vh;
+  }
+}
+
+/* Large Desktop: 1536px+ */
+@media (min-width: 1536px) {
+  .imageWrapper {
+    height: 17vh;
+  }
+}
