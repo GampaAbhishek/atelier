@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import Footer from "./components/Footer/Footer";
 import SideBar from "./components/Sidebar/SideBar";
+import Header from "./components/Dashboard/Header/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +17,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Atelier",
-  description: "Atelier - Votre assistant IA pour une expérience client exceptionnelle",
+  description:
+    "Atelier - Votre assistant IA pour une expérience client exceptionnelle",
 };
 
 export default function RootLayout({
@@ -33,7 +35,11 @@ export default function RootLayout({
         <div className="flex flex-col">
           <div className="flex">
             <SideBar />
-            {children}
+            <div className="flex flex-col w-full">
+              {/* <Header /> */}
+              <Header />
+              {children}
+            </div>
           </div>
 
           <Footer />
