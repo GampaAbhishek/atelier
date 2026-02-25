@@ -18,23 +18,29 @@ const HeaderGreeting = memo(
 
     console.log(lastName);
     useEffect(() => {
-        
       if (currentDateTime) {
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setDateTime(currentDateTime);
       } else {
-        // Default date/time formatting
+        // Format: Wed Aug 27 2059 01:09:07 GMT+0200
+        const now = new Date();
+        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        
+        const dayName = days[now.getDay()];
+        const monthName = months[now.getMonth()];
+        const date = String(now.getDate()).padStart(2, '0');
+        const year = now.getFullYear();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        const offset = now.getTimezoneOffset();
+        const offsetHours = String(Math.abs(offset / 60)).padStart(2, '0');
+        const offsetMinutes = String(Math.abs(offset % 60)).padStart(2, '0');
+        const offsetSign = offset <= 0 ? '+' : '-';
+
         setDateTime(
-          new Date().toLocaleString('en-US', {
-            weekday: 'short',
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            timeZone: 'Europe/Paris',
-          })
+          `${dayName} ${monthName} ${date} ${year} ${hours}:${minutes}:${seconds} GMT${offsetSign}${offsetHours}${offsetMinutes}`
         );
       }
     }, [currentDateTime]);

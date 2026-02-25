@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
-import LoginPageImage from '../../../public/Login/loginPageImage.png'
+import LoginPageImage from '../../../public/Login/loginImage.png'
 
 function Login() {
     // It is a handleFunction 

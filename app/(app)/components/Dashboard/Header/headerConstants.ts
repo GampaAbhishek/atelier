@@ -1,4 +1,5 @@
 import frFlagIcon from '../../../../../public/Header/frFlag.png';
+import ukFlagIcon from '../../../../../public/Header/ukFlag.png';
 import messageIcon from '../../../../../public/Header/messageIcon.png';
 import bellIcon from '../../../../../public/Header/bellIcon.png';
 import profileIcon from '../../../../../public/Header/profileIcon.png';
@@ -62,7 +63,7 @@ export const LANGUAGE_OPTIONS: LanguageOption[] = [
   {
     id: 'en',
     name: 'English',
-    icon: frFlagIcon,
+    icon: ukFlagIcon,
     code: 'en',
   },
 ];

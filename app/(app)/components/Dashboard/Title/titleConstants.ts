@@ -16,7 +16,7 @@ export interface TitleImages {
 
 // Default title content
 export const DEFAULT_TITLE_CONTENT: TitleContent = {
-  greeting: 'Bonjour, Caroline',
+  greeting: 'Bienvenue',
   question: 'En quoi pouvons nous vous aider ?',
 };
 

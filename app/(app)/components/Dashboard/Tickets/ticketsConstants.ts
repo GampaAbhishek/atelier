@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image';
-import lapImage from '../../../../../public/Dashboard/Ticket/lap.png'
+import lapImage from '../../../../../public/Dashboard/Ticket/ticketImage.png'
 
 export type TicketStatus = 'En attente' | 'En cours' | 'Résolu' | 'Fermé';
 
@@ -10,6 +10,7 @@ export interface TicketData {
   description: string;
   status: TicketStatus;
   comment: string;
+  image_url?: string; // Optional field for attached image URL
 }
 
 export const TICKET_STATUS_COLORS: Record<TicketStatus, string> = {
@@ -37,6 +38,7 @@ export const SAMPLE_TICKETS: TicketData[] = [
       'Lorem ipsum dolor sit amet consectetur. Venenatis placerat scelerisque lacoreet tortor in.',
     status: 'En cours',
     comment: 'En cours de traitement...',
+    image_url : 'PJ : IMG_234.png',
   },
   {
     id: '3',

@@ -16,7 +16,7 @@ interface TitleBackgroundProps {
  */
 const TitleBackground = memo(
   ({ children, className = '' }: TitleBackgroundProps) => (
-    <div className={`relative w-full overflow-hidden ${className}`}>
+    <div className={`relative w-full overflow-visible ${className}`}>
       <Image
         src={TITLE_IMAGES.background}
         alt="Title Background"

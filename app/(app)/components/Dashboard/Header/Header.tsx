@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, useCallback } from "react";
+import { memo, useCallback, useState } from "react";
 import HeaderGreeting from "./HeaderGreeting";
 import HeaderActions from "./HeaderActions";
 import LanguageSelector from "./LanguageSelector";
@@ -12,28 +12,19 @@ import {
   PROFILE_MENU_OPTIONS,
 } from "./headerConstants";
 
-/**
- * Header Component
- * Single Responsibility: Orchestrate header sub-components
- *
- * ✅ SOLID Principles Applied:
- * - Single Responsibility: Composes and coordinates sub-components only
- * - Open/Closed: Extensible via headerConstants without modification
- * - Interface Segregation: Props are minimal and focused
- * - Dependency Inversion: Depends on constants abstractions
- * - Liskov Substitution: All sub-components follow expected interfaces
- *
- * 📱 Responsive Design:
- * - Desktop: Full horizontal layout with all elements
- * - Mobile: Stacked layout with optimized spacing
- * - Hamburger menu for sidebar integration (handled separately)
- */
 const Header = memo(() => {
-  const currentLanguage = LANGUAGE_OPTIONS[0]; // Default to first language
+  const [currentLanguage, setCurrentLanguage] = useState(LANGUAGE_OPTIONS[0]); // Default to first language
 
   const handleLanguageChange = useCallback((languageCode: string) => {
     // TODO: Implement language change logic
     console.log("Language changed to:", languageCode);
+    // Update current language (for demo purposes)
+    const newLanguage = LANGUAGE_OPTIONS.find(
+      (lang) => lang.code === languageCode,
+    );
+    if (newLanguage) {
+      setCurrentLanguage(newLanguage);
+    }
   }, []);
 
   const handleHeaderActionClick = useCallback((actionId: string) => {

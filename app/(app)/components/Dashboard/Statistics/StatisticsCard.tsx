@@ -1,5 +1,5 @@
-import React from 'react';
-import type { StatisticCardData } from './statisticsConstants';
+import React from "react";
+import type { StatisticCardData } from "./statisticsConstants";
 
 interface StatisticsCardProps {
   data: StatisticCardData;
@@ -16,9 +16,12 @@ const StatisticsCard: React.FC<StatisticsCardProps> = ({ data }) => {
       className={`${data.tailwindColor} rounded-lg px-4 py-5 sm:px-5 sm:py-6 md:px-6 md:py-5 flex items-center justify-center text-center transition-transform duration-300 hover:shadow-lg hover:scale-105`}
       aria-label={data.label}
     >
-      <p className="text-white text-sm sm:text-base md:text-sm font-medium">
-        {data.label}
-      </p>
+      <div className="flex flex-col gap-5">
+        <p className="text-white text-sm sm:text-base md:text-sm font-medium">
+          {data.label}
+        </p>
+        <span className="text-sm text-white">{data?.time}</span>
+      </div>
     </div>
   );
 };
