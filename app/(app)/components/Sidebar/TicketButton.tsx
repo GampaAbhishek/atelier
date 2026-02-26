@@ -6,6 +6,7 @@ interface TicketButtonProps {
   icon: StaticImageData;
   onClick?: () => void;
   className?: string;
+  active?: boolean;
 }
 
 /**
@@ -14,10 +15,10 @@ interface TicketButtonProps {
  * Single Responsibility: Button rendering with icon
  */
 const TicketButton = memo(
-  ({ label, icon, onClick, className = '' }: TicketButtonProps) => (
+  ({ label, icon, onClick, className = '',active }: TicketButtonProps) => (
     <button
       onClick={onClick}
-      className={`border w-full rounded-2xl cursor-pointer border-black h-16 flex gap-5 items-center justify-center hover:bg-gray-50 transition-colors ${className}`}
+      className={` ${active ? 'bg-[#DFEEFF] text-black' : 'border'} border text-black w-full rounded-2xl cursor-pointer border-black h-16 flex gap-5 items-center justify-center hover:bg-gray-50 transition-colors ${className}`}
       aria-label={label}
     >
       <span className="text-[16px] font-medium">{label}</span>

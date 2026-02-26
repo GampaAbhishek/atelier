@@ -5,7 +5,7 @@ import Tickets from "../components/Dashboard/Tickets/Tickets";
 
 function Dashboard() {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full bg-[#F1FAFF]">
       <Title />
       <Statistics />
       <Tickets />

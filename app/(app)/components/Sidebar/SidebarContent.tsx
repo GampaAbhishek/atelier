@@ -46,6 +46,7 @@ const SidebarContent = memo(
           label="Ouvrir un ticket"
           icon={addButton}
           onClick={onTicketClick}
+          active={activeMenuId === 'ouvrir-un-ticket'}
         />
 
         {/* Menu Items */}

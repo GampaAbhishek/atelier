@@ -6,6 +6,7 @@ import addButton from '../../../../public/Sidebar/addButton.png';
 import MobileMenuToggle from './MobileMenuToggle';
 import ResponsiveMenuContainer from './ResponsiveMenuContainer';
 import SidebarContent from './SidebarContent';
+import { useRouter } from 'next/navigation';
 
 /**
  * SideBar Component
@@ -23,6 +24,8 @@ const SideBar = memo(() => {
   const [activeMenuId, setActiveMenuId] = useState<string>('dashboard');
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
+  const router = useRouter();
+
   const handleMenuClick = useCallback(
     (id: string) => {
       setActiveMenuId(id);
@@ -32,8 +35,11 @@ const SideBar = memo(() => {
     []
   );
 
+  // eslint-disable-next-line react-hooks/preserve-manual-memoization
   const handleTicketClick = useCallback(() => {
     console.log('Open ticket modal');
+    router.push('/ouvrir-un-ticket');
+    setActiveMenuId('ouvrir-un-ticket');
     setIsMobileOpen(false);
   }, []);
 

@@ -4,7 +4,7 @@ import Info from  '@/public/FoireAuxQuestions/info.png';
 
 function InfoImage() {
   return (
-    <div className="w-full overflow-hidden rounded-lg sm:rounded-xl">
+    <div className="min-w-[34vw] overflow-hidden rounded-lg sm:rounded-xl">
       <Image
         src={Info}
         alt="Information about frequently asked questions"
