@@ -14,7 +14,7 @@ const Statistics: React.FC = () => {
   return (
     <section className="flex flex-col pt-6 sm:pt-7 md:pt-8 px-4 sm:px-5 md:px-0">
       {/* Section Title */}
-      <h2 className="pl-5 text-2xl sm:text-3xl md:text-2xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-5 md:mb-4">
+      <h2 className="pl-5 text-2xl sm:text-3xl md:text-2xl font-semibold text-black  mb-4 sm:mb-5 md:mb-4">
         Statistiques
       </h2>
 

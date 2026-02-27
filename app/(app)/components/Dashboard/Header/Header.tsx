@@ -43,7 +43,7 @@ const Header = memo(() => {
   }, []);
 
   return (
-    <header className="w-full  top-0  ">
+    <header className="w-full bg-white shadow-sm">
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between px-4 py-4 md:px-8 md:py-5">
         {/* Left Section: Greeting */}
         <HeaderGreeting

@@ -19,7 +19,7 @@ const TitleRobot = memo(({ className = '' }: TitleRobotProps) => {
   }, []);
 
   return (
-    <div className={`absolute ${LAYOUT_POSITIONS.robotPosition.mobile} md:${LAYOUT_POSITIONS.robotPosition.desktop} w-32 sm:w-44 md:w-56 z-10 ${className}`}>
+    <div className={`absolute hidden md:block ${LAYOUT_POSITIONS.robotPosition.mobile} md:${LAYOUT_POSITIONS.robotPosition.desktop} w-32 sm:w-44 md:w-56 z-10 ${className}`}>
       <Image
         src={TITLE_IMAGES.robot}
         alt="Title Robot Character"

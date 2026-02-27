@@ -37,7 +37,7 @@ const MenuItem = memo(
         aria-label={label}
       >
         <Image src={icon} alt={label} width={20} height={20} />
-        <span className="text-[16px] font-medium">{label}</span>
+        <span className="text-[16px] font-medium text-black">{label}</span>
       </button>
     );
   },

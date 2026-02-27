@@ -11,7 +11,7 @@ const Tickets: React.FC = () => {
   return (
     <section className="flex flex-col pt-6 sm:pt-7 md:pt-8 px-4 sm:px-5 md:px-0">
       {/* Section Title */}
-      <h2 className="text-2xl pl-5 sm:text-3xl font-semibold text-gray-900 dark:text-white mb-6 sm:mb-7 md:mb-8">
+      <h2 className="text-2xl pl-5 sm:text-3xl font-semibold text-gray-900  mb-6 sm:mb-7 md:mb-8">
         Historiques des tickets
       </h2>
 
