@@ -16,7 +16,7 @@ const Tickets: React.FC = () => {
       </h2>
 
       {/* Tickets List */}
-      <div className="space-y-4 sm:space-y-5 md:space-y-6 h-[50vh] overflow-scroll overflow-x-hidden">
+      <div className="space-y-4 sm:space-y-5 md:space-y-6 h-[50vh] mb-5 overflow-scroll overflow-x-hidden pl-5">
         {SAMPLE_TICKETS.length > 0 ? (
           SAMPLE_TICKETS.map((ticket) => (
             <TicketCard key={ticket.id} ticket={ticket} />

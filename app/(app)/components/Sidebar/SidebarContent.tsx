@@ -40,7 +40,7 @@ const SidebarContent = memo(
       <SidebarLogo src={companyLogo} alt="Company Logo" />
 
       {/* Content Container */}
-      <div className="pt-6 space-y-4 flex-1 flex flex-col">
+      <div className="pt-16 space-y-4 flex-1 flex flex-col">
         {/* Ticket Button */}
         <TicketButton
           label="Ouvrir un ticket"

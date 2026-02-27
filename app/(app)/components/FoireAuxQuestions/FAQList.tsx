@@ -55,9 +55,9 @@ const faqData: FAQ[] = [
 function FAQList() {
   return (
     <div className="flex flex-col gap-3 sm:gap-4">
-        <div className='border-2  rounded-xl flex justify-between border-[#9AA4EA]'>
-            <span className="text-[#9D9D9D] items-center pt-[16px] pl-[10px]">comment connecter ..</span>
-            <button className='p-4 rounded-xl bg-[#1BACE1]'>Chercher une question</button>
+        <div className='bg-white border-2  rounded-xl flex justify-between border-[#9AA4EA]'>
+            <span className="text-[#9D9D9D] items-center pt-[16px] pl-[10px]">Search...</span>
+            <button className='p-4 rounded-l-xl rounded-r-[10px] bg-[#1BACE1]'>Chercher une question</button>
         </div>
       {faqData.map((faq) => (
         <FAQItem

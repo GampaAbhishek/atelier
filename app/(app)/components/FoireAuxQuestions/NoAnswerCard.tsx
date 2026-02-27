@@ -8,7 +8,7 @@ interface NoAnswerCardProps {
 
 function NoAnswerCard({ onOpenTicket }: NoAnswerCardProps) {
   return (
-    <div className="border-2 border-[#1BACE1] rounded-lg sm:rounded-xl lg:rounded-2xl p-4 sm:p-5 lg:p-6 flex flex-col gap-4 sm:gap-5">
+    <div className="bg-white 2xl:w-[50%] border-2 border-[#1BACE1] rounded-lg sm:rounded-xl lg:rounded-2xl p-4 sm:p-5 lg:p-6 flex flex-col gap-4 sm:gap-5">
       <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900">
         Question non répondu ?
       </h2>

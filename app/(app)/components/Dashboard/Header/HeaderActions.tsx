@@ -24,7 +24,7 @@ const HeaderActions = memo(
     );
 
     return (
-      <div className={`flex items-center gap-4  ${className}`}>
+      <div className={`flex items-center gap-2 md:gap-4 ${className}`}>
         {actions.map((action) => (
           <div key={action.id} className="relative inline-block">
             <button
@@ -38,7 +38,7 @@ const HeaderActions = memo(
                 alt={action.alt}
                 width={24}
                 height={24}
-                className="w-6 h-6 sm:w-6 sm:h-6 max-sm:w-5 max-sm:h-3"
+                className="w-6 h-6 max-sm:w-5 max-sm:h-5"
               />
 
               {/* Badge indicator */}

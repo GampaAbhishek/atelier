@@ -86,7 +86,7 @@ function Form() {
           <div className="mb-10 w-full">
 
             {/* Row 1: Civité, Nom, Prénom */}
-            <div className="flex max-sm:flex-col md:flex-row justify-between gap-6 mb-6">
+            <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6 gap-6 mb-6">
               <div>
                 <label className="block  text-sm font-medium text-gray-700 mb-2">
                   Civité
@@ -95,7 +95,7 @@ function Form() {
                   name="civite"
                   value={formData.civite}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                  className="w-full bg-white px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 >
                   <option value="">Sélectionner</option>
                   <option value="m">M.</option>
@@ -112,7 +112,7 @@ function Form() {
                   name="nom"
                   value={formData.nom}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                  className="w-full bg-white  px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 />
               </div>
               <div>
@@ -124,13 +124,13 @@ function Form() {
                   name="prenom"
                   value={formData.prenom}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                  className="w-full bg-white  px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 />
               </div>
             </div>
 
             {/* Row 2: Téléphone, E-mail */}
-            <div className="flex max-sm:flex-col  md:flex-row gap-6 mb-6">
+            <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6 gap-6 mb-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Téléphone
@@ -140,7 +140,7 @@ function Form() {
                   name="telephone"
                   value={formData.telephone}
                   onChange={handleInputChange}
-                  className="w-full text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                  className="w-full bg-white  text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                   placeholder="963-352-6409"
                 />
               </div>
@@ -154,7 +154,7 @@ function Form() {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="john.doe@example.com"
-                  className="w-full text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                  className="w-full bg-white  text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 />
               </div>
             </div>
@@ -170,12 +170,12 @@ function Form() {
                 value={formData.adresse}
                 onChange={handleInputChange}
                 placeholder="30 Yode Street, Schenectady, Stockton Michigan"
-                className="w-full px-4 text-[#8C8C8C] py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                className="w-full 2xl:w-[50%] bg-white px-4 text-[#8C8C8C] py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
               />
             </div>
 
             {/* Row 4: Code Postal, Ville, Département */}
-            <div className="flex max-sm:flex-col md:flex-row justify-between gap-6">
+            <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6 gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Code Postal
@@ -185,7 +185,7 @@ function Form() {
                   name="codePostal"
                   value={formData.codePostal}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                  className="w-full bg-white px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 />
               </div>
               <div>
@@ -197,7 +197,7 @@ function Form() {
                   name="ville"
                   value={formData.ville}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                  className="w-full bg-white px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 />
               </div>
               <div>
@@ -209,14 +209,14 @@ function Form() {
                   name="departement"
                   value={formData.departement}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                  className="w-full bg-white px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 />
               </div>
             </div>
           </div>
 
           {/* Socialite and Site Web */}
-          <div className="flex max-sm:flex-col md:flex-row  gap-6 mb-10">
+          <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6  gap-6 mb-10">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Socialite
@@ -227,7 +227,7 @@ function Form() {
                 value={formData.socialite}
                 onChange={handleInputChange}
                 placeholder="John Mathieu, Spudmark"
-                className="w-full text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                className="w-full bg-white text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
               />
             </div>
             <div>
@@ -240,7 +240,7 @@ function Form() {
                 value={formData.siteWeb}
                 onChange={handleInputChange}
                 placeholder="https://mydesigncompany.com/not"
-                className="w-full text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                className="w-full bg-white text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
               />
             </div>
           </div>
@@ -261,12 +261,12 @@ function Form() {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              className="w-full text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+              className="w-full 2xl:w-[50%] bg-white text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 placeholder="Julio_Hilll46@hotmail.com"
             />
           </div>
 
-          <div className="flex max-sm:flex-col md:flex-row gap-6 mb-6">
+          <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6 gap-6 mb-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Mot de passe actuel
@@ -276,7 +276,7 @@ function Form() {
                 name="motDePasseActuel"
                 value={formData.motDePasseActuel}
                 onChange={handleInputChange}
-                className="w-full text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                className="w-full bg-white text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 placeholder="*******************"
               />
             </div>
@@ -289,13 +289,13 @@ function Form() {
                 name="nouveauMotDePasse"
                 value={formData.nouveauMotDePasse}
                 onChange={handleInputChange}
-                className="w-full text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                className="w-full bg-white text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 placeholder="*******************"
               />
             </div>
           </div>
 
-          <div className="flex justify-end">
+          <div className="flex justify-end 2xl:w-[50%]">
             <button
               type="submit"
               className="px-6 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg font-medium transition-colors"
@@ -361,7 +361,7 @@ function Form() {
             </div>
           </div>
 
-          <div className="flex justify-end">
+          <div className="flex justify-end 2xl:w-[50%]">
             <button
               type="submit"
               className="px-6 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg font-medium transition-colors"

@@ -13,7 +13,7 @@ function FAQItem({ question, answer }: FAQItemProps) {
   return (
     <button
       onClick={() => setIsOpen(!isOpen)}
-      className="w-full text-left border-2 border-[#9AA4EA] rounded-xl p-4 sm:p-5 transition-all  focus:outline-none"
+      className="w-full text-left bg-white border-2 border-[#9AA4EA] rounded-xl p-4 sm:p-5 transition-all  focus:outline-none"
       aria-expanded={isOpen}
       aria-label={`FAQ: ${question}`}
     >

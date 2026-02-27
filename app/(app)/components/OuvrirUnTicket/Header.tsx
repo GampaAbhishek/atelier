@@ -7,7 +7,7 @@ function Header() {
     <div className="flex gap-5 justify-between ">
       <div className="flex flex-col gap-5 pl-10 pt-10 w-full">
         <h1 className="text-6xl font-bold text-[#024272]">Ouvrir un ticket</h1>
-        <span >
+        <span className="2xl:w-[80%]">
           Nous mettons tout en œuvre pour vous accompagner rapidement et
           efficacement Décrivez votre demande en quelques mots afin que notre
           équipe puisse vous assister efficacement. Plus votre description est
@@ -27,7 +27,7 @@ function Header() {
           alt="Ticket Information"
           width={800}
           height={400}
-          className="w-full h-auto object-cover rounded-lg"
+          className="w-full 2xl:w-[60%] h-auto object-cover rounded-lg"
         />
       </div>
     </div>

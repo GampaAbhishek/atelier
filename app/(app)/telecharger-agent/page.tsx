@@ -57,14 +57,14 @@ function Page() {
 
       {/* Systems Grid */}
       <div className='pt-8'>
-        <div className='flex md:flex-row max-sm:flex-col gap-6'>
+        <div className='max-sm:flex max-sm:flex-col max-sm:items-center sm:grid sm:grid-cols-2 lg:grid lg:grid-cols-3 xl:grid xl:grid-cols-4 2xl:flex 2xl:flex-row  gap-6 2xl:gap-16'>
           {systems.map((system) => (
             <div
               key={system.id}
-              className='border-2 w-[200px] border-[#1BACE1] rounded-lg  flex flex-col'
+              className='border-2 w-50 border-[#1BACE1] rounded-lg  flex flex-col'
             >
               {/* Logo Section */}
-              <div className='h-32 bg-gradient-to-b from-cyan-50 to-cyan-100 flex items-center justify-center border-b-2 border-[#1BACE1]'>
+              <div className='h-32 bg-linear-to-b from-cyan-50 to-cyan-100 rounded-t-lg flex items-center justify-center border-b-2 border-[#1BACE1]'>
                 <Image
                   src={system.logoPlaceholder}
                   alt={`${system.name} Logo`}
@@ -85,7 +85,7 @@ function Page() {
               </div>
 
               {/* Description Section */}
-              <div className='p-4 flex-grow flex items-center justify-center'
+              <div className='p-4 grow flex items-center justify-center'
               
               >
                 <p className='text-sm text-gray-600 text-center whitespace-pre-line leading-relaxed'>

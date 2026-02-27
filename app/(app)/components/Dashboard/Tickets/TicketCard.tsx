@@ -21,13 +21,13 @@ const TicketCard: React.FC<TicketCardProps> = ({ ticket }) => {
       {/* Main Container */}
       <div className="flex flex-col lg:flex-row gap-3 sm:gap-4 lg:gap-6 p-4 sm:p-5 md:p-6">
         {/* Image Section */}
-        <div className="w-full lg:w-1/4 flex-shrink-0">
+        <div className="w-full lg:w-1/5 shrink-0">
           <Image
             src={ticket.image}
             alt={`Ticket ${ticket.ticketNumber}`}
             width={200}
             height={150}
-            className="w-full h-32 sm:h-40 md:h-48 object-cover rounded-lg"
+            className="w-full h-32 sm:h-40 md:h-48 object-cover rounded-lg lg:h-56"
           />
         </div>
 
@@ -40,10 +40,10 @@ const TicketCard: React.FC<TicketCardProps> = ({ ticket }) => {
               <Image
                 src={ticketImage}
                 alt="Ticket Icon"
-                width={20}
-                height={20}
+                width={30}
+                height={30}
               />
-              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-700">
+              <h3 className="sm:text-base md:text-sm lg:text-sm xl:text-lg 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl font-bold text-slate-700">
                 Ticket {ticket.ticketNumber}
               </h3>
             </div>
@@ -51,16 +51,16 @@ const TicketCard: React.FC<TicketCardProps> = ({ ticket }) => {
             {/* Description */}
             <div className="mb-4">
               <div className="flex justify-between">
-                <h4 className="text-sm sm:text-base font-semibold text-slate-700 mb-1.5">
+                <h4 className="sm:text-base md:text-sm lg:text-sm xl:text-lg 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl font-semibold text-slate-700 mb-1.5">
                   Description
                 </h4>
                 {ticket?.image_url && (
-                  <span className="text-xs font-bold sm:text-sm text-[#383E68] ">
+                  <span className=" font-bold sm:text-base md:text-sm lg:text-sm xl:text-lg 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl text-[#383E68] ">
                     {ticket.image_url}
                   </span>
                 )}
               </div>
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed line-clamp-2 sm:line-clamp-3">
+              <p className="sm:text-base md:text-sm lg:text-sm xl:text-lg 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl text-gray-600 leading-relaxed line-clamp-2 sm:line-clamp-3">
                 {ticket.description}
               </p>
             </div>
@@ -71,11 +71,11 @@ const TicketCard: React.FC<TicketCardProps> = ({ ticket }) => {
             <div className="flex flex-col gap-5">
               {/* Status Section */}
               <div className="flex  gap-2 sm:items-center lg:items-end">
-                <span className="text-xs sm:text-sm items-start font-semibold text-slate-700">
+                <span className="sm:text-base md:text-sm lg:text-sm xl:text-lg 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl items-start font-semibold text-slate-700">
                   Etat du suivi:
                 </span>
                 <span
-                  className={`px-3 py-1 rounded-full text-xs font-semibold ${TICKET_STATUS_COLORS[ticket.status]}`}
+                  className={`px-3 py-1 rounded-full sm:text-base md:text-sm lg:text-sm xl:text-lg 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl font-semibold ${TICKET_STATUS_COLORS[ticket.status]}`}
                 >
                   {ticket.status}
                 </span>
@@ -83,10 +83,10 @@ const TicketCard: React.FC<TicketCardProps> = ({ ticket }) => {
 
               {/* Comment Section */}
               <div className="flex  gap-2">
-                <span className="text-xs sm:text-sm font-semibold text-slate-700">
+                <span className="sm:text-base md:text-sm lg:text-sm xl:text-lg 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl font-semibold text-slate-700">
                   Commentaire
                 </span>
-                <p className="text-xs sm:text-sm text-gray-600 max-w-xs">
+                <p className="sm:text-base md:text-sm lg:text-sm xl:text-lg 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl text-gray-600 max-w-xs">
                   {ticket.comment}
                 </p>
               </div>
@@ -95,9 +95,9 @@ const TicketCard: React.FC<TicketCardProps> = ({ ticket }) => {
             <Image
               src={AddTicketIcon}
               alt="Add Comment Icon"
-              width={24}
+              width={30}
               height={30}
-              className="w-[35px] h-[30px] cursor-pointer hover:scale-110 transition-transform duration-200"
+              className="w-9 h-8 cursor-pointer hover:scale-110 transition-transform duration-200 sm:justify-end"
             />
           </div>
         </div>

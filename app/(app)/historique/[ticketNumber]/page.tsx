@@ -142,7 +142,7 @@ export default function TicketDetailPage() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <p className="text-xs font-semibold text-[#EBF6FF] text-center ">
+            <p className="text-xs font-semibold  text-center ">
               {attachment.name}
             </p>
             <p className="text-xs text-[#024272]">{attachment.date}</p>
@@ -323,7 +323,7 @@ export default function TicketDetailPage() {
         <input
           type="text"
           placeholder="Comment connecter mon iPhone sans rajouter mon adresse mail ?"
-          className="flex-1 px-4 py-2 border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] texxt-[#8C8C8C]"
+          className=" w-full 2xl:w-[30%] px-4 py-2 border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] texxt-[#8C8C8C]"
         />
         <button className="px-6 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors font-semibold whitespace-nowrap">
           Chercher une question
@@ -349,7 +349,7 @@ export default function TicketDetailPage() {
 
   return (
     <div className="min-h-screen pl-5 bg-[#F7FCFF]  p-4 sm:p-6 md:p-8">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto 2xl:max-w-5xl 2xl:ml-16">
         {/* Header */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-5">
           <div className="mb-8">
@@ -408,12 +408,12 @@ export default function TicketDetailPage() {
         <div className="bg-white rounded-lg shadow-lg p-4">
           {/* Tabs */}
           <div className=" mb-8 ml-10 mr-10">
-            <div className="flex gap-8 justify-between">
+            <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-5  gap-8 justify-between">
               {TABS.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`pb-3 px-1 font-semibold text-[32px] text-[#8BABC4] ${
+                  className={` px-1 font-semibold text-[22px] text-[#8BABC4] ${
                     activeTab === tab.id
                       ? "text-[#024272] border-2 border-[#309DD7] rounded-lg px-3"
                       : "text-gray-500 hover:text-gray-700"

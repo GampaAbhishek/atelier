@@ -73,7 +73,7 @@ const ProfileDropdown = memo(
             alt={userName}
             width={32}
             height={32}
-            className="w-8 h-8 object-cover max-sm:w-5 max-sm:h-3"
+            className="w-6 h-6 max-sm:w-5 max-sm:h-5"
           />
           <span className="hidden sm:inline text-sm font-medium max-w-32 truncate">
             {userName}
