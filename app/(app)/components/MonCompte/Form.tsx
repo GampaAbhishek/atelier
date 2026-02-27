@@ -68,7 +68,7 @@ function Form() {
         <h1 className="text-3xl font-bold text-[#024272]">Mon compte</h1>
       </div>
 
-      <div className="flex gap-5">
+      <div className="flex max-sm:flex-col md:flex-row gap-5">
         <div className="flex flex-col gap-3">
           <Image
             src={ProfileImage}
@@ -81,13 +81,12 @@ function Form() {
             Bonjour <br /> Caroline
           </h1>
         </div>
-        <div>
+        <div className="w-full">
           {/* Personal Information Section */}
-          <div className="mb-10">
-            
+          <div className="mb-10 w-full">
 
             {/* Row 1: Civité, Nom, Prénom */}
-            <div className="grid grid-cols-3 gap-6 mb-6">
+            <div className="flex max-sm:flex-col md:flex-row justify-between gap-6 mb-6">
               <div>
                 <label className="block  text-sm font-medium text-gray-700 mb-2">
                   Civité
@@ -131,7 +130,7 @@ function Form() {
             </div>
 
             {/* Row 2: Téléphone, E-mail */}
-            <div className="grid grid-cols-2 gap-6 mb-6">
+            <div className="flex max-sm:flex-col  md:flex-row gap-6 mb-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Téléphone
@@ -176,7 +175,7 @@ function Form() {
             </div>
 
             {/* Row 4: Code Postal, Ville, Département */}
-            <div className="grid grid-cols-3 gap-6">
+            <div className="flex max-sm:flex-col md:flex-row justify-between gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Code Postal
@@ -217,7 +216,7 @@ function Form() {
           </div>
 
           {/* Socialite and Site Web */}
-          <div className="grid grid-cols-2 gap-6 mb-10">
+          <div className="flex max-sm:flex-col md:flex-row  gap-6 mb-10">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Socialite
@@ -267,7 +266,7 @@ function Form() {
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-6 mb-6">
+          <div className="flex max-sm:flex-col md:flex-row gap-6 mb-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Mot de passe actuel

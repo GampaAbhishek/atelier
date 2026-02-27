@@ -57,7 +57,7 @@ function Page() {
 
       {/* Systems Grid */}
       <div className='pt-8'>
-        <div className='flex  gap-6'>
+        <div className='flex md:flex-row max-sm:flex-col gap-6'>
           {systems.map((system) => (
             <div
               key={system.id}
