@@ -13,9 +13,7 @@ interface TitleTextProps {
  * Single Responsibility: Display greeting and help question text
  */
 const TitleText = memo(({ content, className = '' }: TitleTextProps) => (
-  <div style={{
-    marginLeft:"80px"
-  }} className={ `flex flex-col absolute top-[15%] max-sm:top-[15%] md:top-[17%]  max-w-xs sm:max-w-sm md:max-w-md ${className}`}>
+  <div  className={ `flex flex-col absolute top-[15%] max-sm:top-[15%] max-sm:right-[50%] md:ml-[80px] md:top-[17%]  max-w-xs sm:max-w-sm md:max-w-md ${className}`}>
     <h1
       className={`${TEXT_STYLES.greeting.mobile} ${TEXT_STYLES.greeting.color} ${TEXT_STYLES.greeting.weight} leading-tight`}
     >

@@ -61,7 +61,7 @@ export const LAYOUT_POSITIONS = {
   padding: ' md:pl-[10px] max-sm:pl-[10px] ',
   robotPosition: {
     mobile: 'top-[-15%] right-[5%]',
-    desktop: 'top-[-18%] right-[8%]',
+    desktop: 'top-[-12%] right-[8%]',
   },
   textPosition: {
     mobile: 'top-[15%] right-[2%]',

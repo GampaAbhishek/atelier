@@ -16,13 +16,13 @@ interface TitleBackgroundProps {
  */
 const TitleBackground = memo(
   ({ children, className = '' }: TitleBackgroundProps) => (
-    <div className={`relative w-full overflow-visible ${className}`}>
+    <div className={`relative w-full  md:overflow-visible ${className}`}>
       <Image
         src={TITLE_IMAGES.background}
         alt="Title Background"
         priority
         quality={85}
-        className={styles.imageWrapper}
+        className={`${styles.imageWrapper} max-sm:h-[200px] md:h-auto w-full object-cover`}
        
       />
       {/* Absolute positioned children container */}
