@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Header() {
   return (
-    <div className="sm:flex md:flex sm:flex-col md:flex-row sm:gap-5 md:gap-6 justify-between ">
+    <div className="sm:flex md:flex sm:flex-col max-md:flex-row lg:flex-row sm:gap-5 md:gap-6 justify-between ">
       <div className="flex flex-col gap-5 md:pl-10  pt-10 max-sm:pl-3 w-full 2xl:w-[50%]">
         <h1 className="text-6xl font-bold text-[#024272] ">Ouvrir un ticket</h1>
         <span className="2xl:w-[80%] text-black">

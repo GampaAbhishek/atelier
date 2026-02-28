@@ -48,7 +48,7 @@ const LanguageSelector = memo(
             alt="Language"
             width={24}
             height={24}
-            className="w-6 h-6 max-sm:w-5 max-sm:h-5"
+            className="w-6 h-6 max-sm:w-5 max-sm:h-5 md:w-4 md:h-4 lg:w-6 lg:h-6"
           />
         </button>
 

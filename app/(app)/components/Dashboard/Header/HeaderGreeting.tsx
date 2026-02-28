@@ -47,10 +47,10 @@ const HeaderGreeting = memo(
 
     return (
       <div className="flex flex-col gap-1 md:items-start max-sm:items-center">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900">
+        <h1 className="max-sm:text-[20px] lg:text-3xl max-md:text-sm font-medium text-gray-900">
           Bonjour, {firstName}
         </h1>
-        <p className="text-xs sm:text-sm text-gray-600 font-light">
+        <p className="max-sm:text-[15px] lg:text-xs md:text-[10px] text-gray-600 font-light">
           {dateTime}
         </p>
       </div>

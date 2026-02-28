@@ -50,7 +50,7 @@ export const TEXT_STYLES = {
     weight: 'font-semibold',
   },
   question: {
-    mobile: 'text-sm max-sm:text-[10px] md:text-lg',
+    mobile: 'text-sm md:text-lg',
     color: 'text-[#383E68]',
     weight: 'font-normal',
   },
