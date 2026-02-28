@@ -22,7 +22,7 @@ const TitleBackground = memo(
         alt="Title Background"
         priority
         quality={85}
-        className={` max-sm:h-[70px] md:h-[180px] lg:h-[150px] xl:h-[175px] 2xl:h-[220px] w-full object-cover`}
+        className={` max-sm:h-[100px] md:h-[180px] lg:h-[150px] xl:h-[175px] 2xl:h-[220px] w-full object-cover`}
        
       />
       {/* Absolute positioned children container */}
