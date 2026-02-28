@@ -1,10 +1,10 @@
-import React from 'react';
-import Image from 'next/image';
-import Info from  '@/public/FoireAuxQuestions/info.png';
+import React from "react";
+import Image from "next/image";
+import Info from "@/public/FoireAuxQuestions/info.png";
 
 function InfoImage() {
   return (
-    <div className="w-[34vw] 2xl:w-[50%] overflow-hidden rounded-lg sm:rounded-xl">
+    <div className=" md:w-[34vw]  2xl:w-[50%] overflow-hidden rounded-lg sm:rounded-xl">
       <Image
         src={Info}
         alt="Information about frequently asked questions"

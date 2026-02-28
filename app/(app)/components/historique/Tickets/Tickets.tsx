@@ -1,6 +1,6 @@
-import React from 'react';
-import TicketCard from './TicketCard';
-import { SAMPLE_TICKETS } from './ticketsConstants';
+import React from "react";
+import TicketCard from "./TicketCard";
+import { SAMPLE_TICKETS } from "./ticketsConstants";
 
 /**
  * Tickets Component
@@ -9,10 +9,9 @@ import { SAMPLE_TICKETS } from './ticketsConstants';
  */
 const Tickets: React.FC = () => {
   return (
-    <section className="flex  flex-col pt-6 sm:pt-7 md:pt-8 px-4 sm:px-5 md:px-0">
-
+    <section className="flex h-[90vh]  flex-col pt-6 sm:pt-7 md:pt-8 px-4 sm:px-5 md:px-0">
       {/* Tickets List */}
-      <div className="space-y-4 sm:space-y-5 md:space-y-6 h-[62%] overflow-scroll overflow-x-hidden">
+      <div className="space-y-4 sm:space-y-5 md:space-y-6 h-[90%] overflow-scroll overflow-x-hidden">
         {SAMPLE_TICKETS.length > 0 ? (
           SAMPLE_TICKETS.map((ticket) => (
             <TicketCard key={ticket.id} ticket={ticket} />

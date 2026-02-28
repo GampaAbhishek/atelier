@@ -4,7 +4,7 @@ import Tickets from '../components/historique/Tickets/Tickets'
 
 function page() {
   return (
-    <div className='bg-[#F7FCFF] pl-10 pt-10'>
+    <div className='bg-[#F7FCFF] max-sm:pl-5 md:pl-10 pt-10'>
         <Header />
         <Tickets />
     </div>

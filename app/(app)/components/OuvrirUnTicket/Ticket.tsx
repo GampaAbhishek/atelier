@@ -38,7 +38,7 @@ function Ticket() {
     <div className='p-10'>
       <form onSubmit={handleSubmit} className='space-y-6'>
         {/* Subject and Attachment Row */}
-        <div className='flex gap-6'>
+        <div className='sm:flex sm:flex-col md:flex md:flex-row gap-6'>
           {/* Subject */}
           <div className='md:flex-1 2xl:flex-none'>
             <label className='block text-sm font-medium text-gray-700 mb-2'>
@@ -50,16 +50,16 @@ function Ticket() {
               value={formData.sujet}
               onChange={handleInputChange}
               placeholder='Entrez le sujet'
-              className='w-full bg-white  px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'
+              className='w-full bg-white  text-black px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'
             />
           </div>
 
           {/* Attachment */}
-          <div className='md:flex-1 2xl:flex-none '>
+          <div className='md:flex-1  2xl:flex-none '>
             <label className='block text-sm font-medium text-gray-700 mb-2'>
               Pièce jointe
             </label>
-            <div className='flex gap-2 w-full '>
+            <div className='sm:flex sm:flex-row md:flex md:flex-row  md:gap-2 w-full '>
               <input
                 type='file'
                 onChange={handleFileChange}
@@ -76,7 +76,7 @@ function Ticket() {
               <button
                 type='button'
                 onClick={() => document.getElementById('file-input')?.click()}
-                className='px-6 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg font-medium transition-colors'
+                className='px-6 py-2 max-sm:mt-4 md:mt-0 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg font-medium transition-colors'
               >
                 Ajouter une pièce jointe
               </button>
@@ -100,7 +100,7 @@ function Ticket() {
             onChange={handleInputChange}
             placeholder='Décrivez votre problème...'
             rows={6}
-            className='w-full 2xl:w-[40%] bg-white px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'
+            className='w-full text-black 2xl:w-[40%] bg-white px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'
           />
         </div>
 

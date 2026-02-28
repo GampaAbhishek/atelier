@@ -4,16 +4,16 @@ import Image from "next/image";
 
 function Header() {
   return (
-    <div className="flex gap-5 justify-between ">
-      <div className="flex flex-col gap-5 pl-10 pt-10 w-full">
-        <h1 className="text-6xl font-bold text-[#024272]">Ouvrir un ticket</h1>
-        <span className="2xl:w-[80%]">
+    <div className="sm:flex md:flex sm:flex-col md:flex-row sm:gap-5 md:gap-6 justify-between ">
+      <div className="flex flex-col gap-5 md:pl-10  pt-10 max-sm:pl-3 w-full">
+        <h1 className="text-6xl font-bold text-[#024272] ">Ouvrir un ticket</h1>
+        <span className="2xl:w-[80%] text-black">
           Nous mettons tout en œuvre pour vous accompagner rapidement et
           efficacement Décrivez votre demande en quelques mots afin que notre
           équipe puisse vous assister efficacement. Plus votre description est
           précise (contexte, message d’erreur, captures d’écran).
         </span>
-        <span >
+        <span className="text-black" >
           Notre support technique traite chaque ticket avec attention afin de
           garantir un suivi personnalisé.
         </span>

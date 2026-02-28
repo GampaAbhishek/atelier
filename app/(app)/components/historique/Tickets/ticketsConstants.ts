@@ -49,4 +49,22 @@ export const SAMPLE_TICKETS: TicketData[] = [
     status: 'En cours',
     comment: 'En cours de traitement...',
   },
+  {
+    id: '4',
+    ticketNumber: 4169,
+    image: lapImage,
+    description:
+      'Lorem ipsum dolor sit amet consectetur. Venenatis placerat scelerisque lacoreet tortor in.',
+    status: 'En cours',
+    comment: 'En cours de traitement...',
+  },
+  {
+    id: '5',
+    ticketNumber: 4169,
+    image: lapImage,
+    description:
+      'Lorem ipsum dolor sit amet consectetur. Venenatis placerat scelerisque lacoreet tortor in.',
+    status: 'En cours',
+    comment: 'En cours de traitement...',
+  },
 ];
