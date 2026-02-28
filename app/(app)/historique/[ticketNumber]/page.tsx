@@ -59,15 +59,15 @@ export default function TicketDetailPage() {
   const renderActivite = () => (
     <div className="space-y-4">
       {/* Comment Input */}
-      <div className="flex gap-3 items-end">
+      <div className="flex max-sm:flex max-sm:flex-col max-sm:items-start max-sm:w-full gap-3 items-end">
         <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
           <Image src={profileImage} alt="User" width={24} height={24} />
         </div>
-        <div className="flex-1 flex gap-2">
+        <div className="max-sm:flex max-sm:flex-col max-sm:w-full md:flex-1 flex gap-2">
           <input
             type="text"
             placeholder="Your comment here..."
-            className="flex-1 px-4 py-2 border-2 border-[#9AA4EA] rounded-lg"
+            className="flex-1 max-sm:text-black max-sm:text-[15px] px-4 py-2 border-2 border-[#9AA4EA] rounded-lg"
           />
           <button className="px-6 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors font-semibold">
             Envoyer
@@ -113,16 +113,16 @@ export default function TicketDetailPage() {
   const renderPiece = () => (
     <div className="space-y-4">
       {/* File Input */}
-      <div className="flex gap-3 items-end">
+      <div className=" flex max-sm:flex max-sm:flex-col max-sm:items-start gap-3 items-end">
         <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
           <Image src={profileImage} alt="User" width={24} height={24} />
         </div>
         <input
           type="text"
           placeholder="hour_ams_open_architectural.pdf"
-          className="flex-1 px-4 py-2 border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] texxt-[#8C8C8C]"
+          className="flex-1 max-sm:text-black max-sm:text-[15px] max-sm:w-full px-4 py-2 border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] texxt-[#8C8C8C]"
         />
-        <button className="px-6 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors font-semibold">
+        <button className="px-6 py-2 bg-cyan-500 text-white max-sm:w-full rounded-lg hover:bg-cyan-600 transition-colors font-semibold">
           Ajouter un fichier
         </button>
       </div>
@@ -130,7 +130,7 @@ export default function TicketDetailPage() {
       {/* Attachments Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-6">
         {ticket.attachments.map((attachment, index) => (
-          <div key={index} className="text-center rounded-2xl group cursor-pointer" style={{
+          <div key={index} className="text-center pb-2 rounded-2xl group cursor-pointer" style={{
             backgroundColor:"#EBF6FF"
           }}>
             <div className="relative mb-2 overflow-hidden rounded-lg  p-4">
@@ -142,7 +142,7 @@ export default function TicketDetailPage() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <p className="text-xs font-semibold  text-center ">
+            <p className="text-xs text-black max-sm:text-[10px] font-semibold  text-center ">
               {attachment.name}
             </p>
             <p className="text-xs text-[#024272]">{attachment.date}</p>
@@ -155,16 +155,16 @@ export default function TicketDetailPage() {
   const renderDetails = () => (
     <div className="space-y-4">
       {/* Input Section with Avatar */}
-      <div className="flex gap-3 items-end">
+      <div className="flex max-sm:flex max-sm:flex-col max-sm:items-start gap-3 items-end">
         <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
           <Image src={profileImage} alt="User" width={24} height={24} />
         </div>
         <input
           type="text"
           placeholder="Enter additional details..."
-          className="flex-1 px-4 py-2 border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] text-[#8C8C8C]"
+          className="flex-1 px-4 py-2 max-sm:text-black max-sm:text-[15px] max-sm:w-full border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] text-[#8C8C8C]"
         />
-        <button className="px-6 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors font-semibold">
+        <button className="px-6 py-2 max-sm:w-full bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors font-semibold">
           Ajouter un fichier
         </button>
       </div>
@@ -293,10 +293,10 @@ export default function TicketDetailPage() {
             />
           </div>
           <div className="flex-1">
-            <p className="text-sm font-semibold text-[#024272]">architectural_metrics_integrating.pdf</p>
-            <p className="text-xs text-[#8BABC4]">Drag files here or click to upload</p>
+            <p className="text-sm max-sm:text-[10px] font-semibold text-[#024272]">architectural_metrics_integrating.pdf</p>
+            <p className="text-xs max-sm:text-[10px] text-[#8BABC4]">Drag files here or click to upload</p>
           </div>
-          <div className="flex gap-2">
+          <div className="flex max-sm:flex-col gap-2">
             <button className="p-2 text-[#309DD7] hover:bg-[#EBF6FF] rounded">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v4a1 1 0 001 1h12a1 1 0 001-1V6a2 2 0 00-2-2H4zm0 6v4a2 2 0 002 2h8a2 2 0 002-2v-4H4z" clipRule="evenodd" />
@@ -316,16 +316,16 @@ export default function TicketDetailPage() {
   const renderFAQ = () => (
     <div className="space-y-3">
       {/* Question Input */}
-      <div className="flex gap-3 items-end">
+      <div className="flex max-sm:flex max-sm:flex-col max-sm:items-start gap-3 items-end">
         <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
           <Image src={profileImage} alt="User" width={24} height={24} />
         </div>
         <input
           type="text"
           placeholder="Comment connecter mon iPhone sans rajouter mon adresse mail ?"
-          className=" w-full 2xl:w-[30%] px-4 py-2 border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] texxt-[#8C8C8C]"
+          className=" w-full max-sm:text-black max-sm:text-[15px] max-sm:w-full 2xl:w-[30%] px-4 py-2 border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] texxt-[#8C8C8C]"
         />
-        <button className="px-6 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors font-semibold whitespace-nowrap">
+        <button className="px-6 py-2 max-sm:w-full bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors font-semibold whitespace-nowrap">
           Chercher une question
         </button>
       </div>
@@ -407,8 +407,8 @@ export default function TicketDetailPage() {
 
         <div className="bg-white rounded-lg shadow-lg p-4">
           {/* Tabs */}
-          <div className=" mb-8 ml-10 mr-10">
-            <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-5  gap-8 justify-between">
+          <div className="mb-8 ml-10 mr-10">
+            <div className="grid sm:grid-cols-1 max-sm:justify-center lg:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-5  gap-8 justify-between">
               {TABS.map((tab) => (
                 <button
                   key={tab.id}
