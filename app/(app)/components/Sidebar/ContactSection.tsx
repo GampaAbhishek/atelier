@@ -25,7 +25,7 @@ const ContactSection = memo(({ title, contacts }: ContactSectionProps) => (
               width={15}
               height={15}
             />
-            <span className="text-[10px] text-black font-medium">{contact.value}</span>
+            <span className="text-[12px] text-black font-medium">{contact.value}</span>
           </div>
         ))}
       </div>

@@ -35,12 +35,12 @@ const SidebarContent = memo(
     onMenuClick,
     onTicketClick,
   }: SidebarContentProps) => (
-    <div className="p-4 flex flex-col justify-center h-full">
+    <div className="p-4 pt-[25px] flex flex-col justify-center h-full">
       {/* Logo Section */}
       <SidebarLogo src={companyLogo} alt="Company Logo" />
 
       {/* Content Container */}
-      <div className="pt-16 space-y-4 flex-1 flex flex-col">
+      <div className="pt-20 space-y-4 flex-1 flex flex-col">
         {/* Ticket Button */}
         <TicketButton
           label="Ouvrir un ticket"

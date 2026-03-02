@@ -79,13 +79,8 @@ export interface DropdownOption {
 export const PROFILE_MENU_OPTIONS: DropdownOption[] = [
   {
     id: 'profile',
-    label: 'Mon Profil',
-    onClick: () => console.log('Navigate to profile'),
-  },
-  {
-    id: 'settings',
-    label: 'Paramètres',
-    onClick: () => console.log('Navigate to settings'),
+    label: 'Mon Compte',
+    onClick: () => console.log('Go to profile'),
   },
   {
     id: 'logout',

@@ -75,7 +75,7 @@ const ProfileDropdown = memo(
             height={32}
             className="w-6 h-6 max-sm:w-5 max-sm:h-5 md:w-4 md:h-4 lg:w-6 lg:h-6"
           />
-          <span className="hidden sm:inline text-sm font-medium max-w-32 truncate">
+          <span className="hidden sm:inline text-black text-sm font-medium max-w-32 truncate">
             {userName}
           </span>
           <Image
@@ -101,7 +101,7 @@ const ProfileDropdown = memo(
                   className="w-10 h-10 rounded-full "
                 />
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold truncate">{userName}</p>
+                  <p className="text-sm font-semibold text-black truncate">{userName}</p>
                   <p className="text-xs text-gray-500">Admin Account</p>
                 </div>
               </div>
@@ -113,7 +113,7 @@ const ProfileDropdown = memo(
                 <button
                   key={option.id}
                   onClick={() => handleOptionClick(option.id)}
-                  className="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors duration-150"
+                  className="w-full cursor-pointer text-black text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors duration-150"
                 >
                   {option.label}
                 </button>

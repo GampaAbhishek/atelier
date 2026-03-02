@@ -1,12 +1,12 @@
 'use client';
 
-import { memo, useState, useCallback } from 'react';
+import { memo, useState, useCallback, useEffect } from 'react';
 import companyLogo from '../../../../public/Logo.svg';
 import addButton from '../../../../public/Sidebar/addButton.png';
 import MobileMenuToggle from './MobileMenuToggle';
 import ResponsiveMenuContainer from './ResponsiveMenuContainer';
 import SidebarContent from './SidebarContent';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 /**
  * SideBar Component
@@ -24,15 +24,21 @@ const SideBar = memo(() => {
   const [activeMenuId, setActiveMenuId] = useState<string>('dashboard');
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
+
   const router = useRouter();
+
+  const pathname = usePathname();
+
+  useEffect(() => {
+    let currentMenuId = pathname.split('/')[1] || 'dashboard'; // Default to 'dashboard' if root
+    setActiveMenuId(currentMenuId);
+  }, [pathname]);
 
   const handleMenuClick = useCallback(
     (id: string) => {
-      setActiveMenuId(id);
-      // Close mobile menu after selection
       setIsMobileOpen(false);
     },
-    []
+    [activeMenuId, pathname]
   );
 
   // eslint-disable-next-line react-hooks/preserve-manual-memoization
