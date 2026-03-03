@@ -58,7 +58,7 @@ export const SIDEBAR_CONTACT_INFO: ContactInfo[] = [
   {
     id: 'phone',
     type: 'phone',
-    value: '00 00 00 00 00',
+    value: '04 84 89 52 14',
     icon: mobileIcon,
   },
   {

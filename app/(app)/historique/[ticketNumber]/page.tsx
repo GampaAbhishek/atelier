@@ -303,7 +303,7 @@ export default function TicketDetailPage() {
         <input
           type="text"
           placeholder="Comment connecter mon iPhone sans rajouter mon adresse mail ?"
-          className=" w-full max-sm:text-black max-sm:text-[15px] max-sm:w-full 2xl:w-[30%] px-4 py-2 border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] texxt-[#8C8C8C]"
+          className=" w-full text-black max-sm:text-black max-sm:text-[15px] max-sm:w-full 2xl:w-[30%] px-4 py-2 border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] texxt-[#8C8C8C]"
         />
         <button className="px-6 py-2 max-sm:w-full bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors font-semibold whitespace-nowrap">
           Chercher une question

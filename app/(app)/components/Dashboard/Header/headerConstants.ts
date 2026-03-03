@@ -1,7 +1,7 @@
 import frFlagIcon from '../../../../../public/Header/frFlag.png';
 import ukFlagIcon from '../../../../../public/Header/ukFlag.png';
-import messageIcon from '../../../../../public/Header/messageIcon.png';
-import bellIcon from '../../../../../public/Header/bellIcon.png';
+import messageIcon from '../../../../../public/Header/messageIcon.svg';
+import bellIcon from '../../../../../public/Header/bellIcon.svg';
 import profileIcon from '../../../../../public/Header/profileIcon.png';
 import downArrowIcon from '../../../../../public/Header/downArrow.png';
 import { StaticImageData } from 'next/image';
@@ -83,9 +83,9 @@ export const PROFILE_MENU_OPTIONS: DropdownOption[] = [
     onClick: () => console.log('Go to profile'),
   },
   {
-    id: 'logout',
-    label: 'Déconnexion',
-    onClick: () => console.log('Logout'),
+    id: 'Parc informatique',
+    label: 'Parc informatique',
+    onClick: () => console.log('Go to Parc informatique'),
   },
 ];
 
