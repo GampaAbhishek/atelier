@@ -24,7 +24,7 @@ export const STATISTICS_DATA: StatisticCardData[] = [
   {
     id: 'response-light',
     label: 'Nombre de tickets ouverts',
-    backgroundColor: 'bg-[#ACE7F7]',
+    backgroundColor: 'bg-[#3C77AE]',
     tailwindColor: 'bg-blue-200',
     time: '5',
   },

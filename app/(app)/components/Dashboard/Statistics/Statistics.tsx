@@ -19,7 +19,7 @@ const Statistics: React.FC = () => {
       </h2>
 
       {/* Statistics Grid */}
-      <div className="pl-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
+      <div className="pl-5 pr-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
         {STATISTICS_DATA.map((statistic) => (
           <StatisticsCard key={statistic.id} data={statistic} />
         ))}
