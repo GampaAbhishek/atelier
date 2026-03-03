@@ -62,23 +62,31 @@ const faqData: FAQ[] = [
 
 function FAQList() {
   return (
-    <div className="flex flex-col gap-3 sm:gap-4">
-      <div className="bg-white hidden md:flex border-2  rounded-xl  justify-between border-[#9AA4EA]">
-        <span className="text-[#9D9D9D] items-center pt-4 pl-3">Search...</span>
-        <button className="p-4 rounded-l-xl rounded-r-[10px] bg-[#1BACE1]">
+    <div className="flex flex-col gap-3 sm:gap-4 mb-10">
+      {/* Desktop Search Bar */}
+      <div className="bg-white hidden md:flex border-2 border-[#9AA4EA] rounded-xl items-center overflow-hidden">
+        <input
+          type="text"
+          placeholder="Search..."
+          className="flex-1 px-4 py-4 text-gray-800 bg-white outline-none placeholder-[#9D9D9D]"
+        />
+        <button className="px-6 py-4 bg-[#1BACE1] text-white font-medium hover:bg-[#1899cc] transition-colors duration-200 whitespace-nowrap">
           Chercher une question
         </button>
       </div>
+
+      {/* Mobile Search Bar */}
       <div className="md:hidden flex flex-col gap-5">
         <input
           type="text"
           placeholder="Search..."
-          className="w-full p-4 text-black rounded-xl border-2 border-[#9AA4EA]"
+          className="w-full p-4 text-black bg-white rounded-xl border-2 border-[#9AA4EA] placeholder-[#9D9D9D]"
         />
-        <button className="w-full p-4 rounded-xl bg-[#1BACE1] text-black">
+        <button className="w-full p-4 rounded-xl bg-[#1BACE1] text-white font-medium hover:bg-[#1899cc] transition-colors duration-200">
           Chercher une question
         </button>
       </div>
+
       {faqData.map((faq) => (
         <FAQItem key={faq.id} question={faq.question} answer={faq.answer} />
       ))}

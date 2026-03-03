@@ -4,7 +4,7 @@ import Info from '../components/FoireAuxQuestions/Info'
 
 function FoireAuxQuestions() {
   return (
-    <div className='flex max-sm:flex-col gap-6 sm:gap-8 lg:gap-10 w-full bg-[#F1FAFF] p-10'>
+    <div className='flex max-sm:flex-col gap-6 sm:gap-8 lg:gap-10 w-full bg-[#F1FAFF] p-10 pt-12 mb-6'>
       <Header />
       <Info />
     </div>

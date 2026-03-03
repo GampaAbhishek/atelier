@@ -20,9 +20,9 @@ const FooterSection: React.FC<FooterSectionProps> = ({ title, links } : {
     links: FooterLinkProps[];
 }) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col ">
       <h3 className="text-xs sm:text-sm font-bold uppercase tracking-wider mb-3 sm:mb-4 text-white leading-tight">{title}</h3>
-      <ul className="space-y-2 sm:space-y-3 list-none p-0 m-0">
+      <ul className=" list-none p-0 m-0">
         {links.map((link, index) => (
           <li key={`${title}-link-${index}`} className="min-h-[1.5rem] sm:min-h-[1.75rem]">
             <a

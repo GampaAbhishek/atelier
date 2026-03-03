@@ -141,7 +141,7 @@ function Form() {
                   value={formData.telephone}
                   onChange={handleInputChange}
                   className="w-full bg-white  text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                  placeholder="963-352-6409"
+                  
                 />
               </div>
               <div>
@@ -153,7 +153,7 @@ function Form() {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  placeholder="john.doe@example.com"
+          
                   className="w-full bg-white  text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 />
               </div>
@@ -169,7 +169,7 @@ function Form() {
                 name="adresse"
                 value={formData.adresse}
                 onChange={handleInputChange}
-                placeholder="30 Yode Street, Schenectady, Stockton Michigan"
+                
                 className="w-full 2xl:w-[50%] bg-white px-4 text-[#8C8C8C] py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
               />
             </div>
@@ -226,7 +226,7 @@ function Form() {
                 name="socialite"
                 value={formData.socialite}
                 onChange={handleInputChange}
-                placeholder="John Mathieu, Spudmark"
+                
                 className="w-full bg-white text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
               />
             </div>
@@ -239,7 +239,7 @@ function Form() {
                 name="siteWeb"
                 value={formData.siteWeb}
                 onChange={handleInputChange}
-                placeholder="https://mydesigncompany.com/not"
+                
                 className="w-full bg-white text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
               />
             </div>
@@ -262,7 +262,7 @@ function Form() {
               value={formData.email}
               onChange={handleInputChange}
               className="w-full 2xl:w-[50%] bg-white text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                placeholder="Julio_Hilll46@hotmail.com"
+                
             />
           </div>
 
@@ -277,7 +277,7 @@ function Form() {
                 value={formData.motDePasseActuel}
                 onChange={handleInputChange}
                 className="w-full bg-white text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                placeholder="*******************"
+                
               />
             </div>
             <div>
@@ -290,7 +290,7 @@ function Form() {
                 value={formData.nouveauMotDePasse}
                 onChange={handleInputChange}
                 className="w-full bg-white text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                placeholder="*******************"
+                
               />
             </div>
           </div>
@@ -338,26 +338,7 @@ function Form() {
                   Email - Recevoir les mises à jour de vos tickets par email
                 </span>
               </label>
-              <label className="flex items-center cursor-pointer">
-                <button
-                  type="button"
-                  onClick={() => setFormData(prev => ({ ...prev, alerteSMS: !prev.alerteSMS }))}
-                  className="flex-shrink-0 flex items-center justify-center w-6 h-6 bg-white border-2 border-gray-300 rounded hover:border-cyan-500 transition-colors p-0 m-0"
-                >
-                  {formData.alerteSMS && (
-                    <Image
-                      src={TickMark}
-                      alt="SMS alert enabled"
-                      width={20}
-                      height={20}
-                      className="pointer-events-none"
-                    />
-                  )}
-                </button>
-                <span className="ml-3 text-sm text-gray-700">
-                  SMS - Recevoir les mises à jour par message texte
-                </span>
-              </label>
+             
             </div>
           </div>
 

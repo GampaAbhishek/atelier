@@ -67,7 +67,7 @@ export default function TicketDetailPage() {
           <input
             type="text"
             placeholder="Your comment here..."
-            className="flex-1 max-sm:text-black max-sm:text-[15px] px-4 py-2 border-2 border-[#9AA4EA] rounded-lg"
+            className="flex-1 text-black max-sm:text-black max-sm:text-[15px] px-4 py-2 border-2 border-[#9AA4EA] rounded-lg"
           />
           <button className="px-6 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors font-semibold">
             Envoyer
@@ -80,7 +80,7 @@ export default function TicketDetailPage() {
         {/* Vertical gradient line */}
         
         {ticket.activities.map((activity) => (
-          <div key={activity.id} className="flex gap-3">
+          <div key={activity.id} className="flex gap-3 mb-9">
             <div
               className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${activity.isNegative ? "bg-yellow-500" : "bg-blue-100"}`}
             >
@@ -119,8 +119,7 @@ export default function TicketDetailPage() {
         </div>
         <input
           type="text"
-          placeholder="hour_ams_open_architectural.pdf"
-          className="flex-1 max-sm:text-black max-sm:text-[15px] max-sm:w-full px-4 py-2 border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] texxt-[#8C8C8C]"
+          className="flex-1 max-sm:text-black max-sm:text-[15px] max-sm:w-full px-4 py-2 border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] text-[#8C8C8C]"
         />
         <button className="px-6 py-2 bg-cyan-500 text-white max-sm:w-full rounded-lg hover:bg-cyan-600 transition-colors font-semibold">
           Ajouter un fichier
@@ -247,25 +246,6 @@ export default function TicketDetailPage() {
 
       {/* Descriptions Section */}
       <div className="space-y-4">
-        <div>
-          <label className="block text-sm font-semibold text-[#024272] mb-2">
-            Description
-          </label>
-          <textarea
-            placeholder="Enter description..."
-            className="w-full px-4 py-2 border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] text-[#8C8C8C] h-20"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-semibold text-[#024272] mb-2">
-            Description
-          </label>
-          <textarea
-            placeholder="Enter description..."
-            className="w-full px-4 py-2 border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] text-[#8C8C8C] h-20"
-          />
-        </div>
 
         <div>
           <label className="block text-sm font-semibold text-[#024272] mb-2">
@@ -348,7 +328,7 @@ export default function TicketDetailPage() {
   );
 
   return (
-    <div className="min-h-screen pl-5 bg-[#F7FCFF]  p-4 sm:p-6 md:p-8">
+    <div className="min-h-screen pl-5 bg-[#F7FCFF]  p-4 sm:p-6 md:p-8 mb-6">
       <div className="max-w-4xl mx-auto 2xl:max-w-5xl 2xl:ml-16">
         {/* Header */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-5">
