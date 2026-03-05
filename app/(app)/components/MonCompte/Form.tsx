@@ -64,9 +64,7 @@ function Form() {
   return (
     <div className="p-10">
       {/* Header */}
-      <div className="flex items-center gap-6 mb-8">
-        <h1 className="text-3xl font-bold text-[#024272]">Mon compte</h1>
-      </div>
+     
 
       <div className="flex max-sm:flex-col md:flex-row gap-5">
         <div className="flex flex-col gap-3">

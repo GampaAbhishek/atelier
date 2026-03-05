@@ -83,9 +83,14 @@ export const PROFILE_MENU_OPTIONS: DropdownOption[] = [
     onClick: () => console.log('Go to profile'),
   },
   {
-    id: 'Parc informatique',
-    label: 'Parc informatique',
-    onClick: () => console.log('Go to Parc informatique'),
+    id: 'Mon parc',
+    label: 'Mon parc',
+    onClick: () => console.log('Go to Mon parc'),
+  },
+   {
+    id: 'Déconnexion',
+    label: 'Déconnexion',
+    onClick: () => console.log('Go to Déconnexion'),
   },
 ];
 

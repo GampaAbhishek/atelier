@@ -19,9 +19,7 @@ function Header() {
           Notre support technique traite chaque ticket avec attention afin de
           garantir un suivi personnalisé.
         </span>
-        <span className="text-[#309DD7]" >
-          Ouvert de 9h à 19h - Délais de réponse 4h
-        </span>
+       
       </div>
       <div className="w-full">
         <Image
@@ -55,9 +53,7 @@ function Header() {
           Notre support technique traite chaque ticket avec attention afin de
           garantir un suivi personnalisé.
         </span>
-        <span className="text-[#309DD7]" >
-          Ouvert de 9h à 19h - Délais de réponse 4h
-        </span>
+        
       </div>
      
     </div>

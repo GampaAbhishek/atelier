@@ -3,6 +3,8 @@ import React from 'react';
 interface FooterLinkProps {
   label: string;
   href: string;
+  color?: 'white' | 'gray';
+  font?: 'bold' | 'normal';
 }
 
 interface FooterSectionProps {
@@ -27,7 +29,8 @@ const FooterSection: React.FC<FooterSectionProps> = ({ title, links } : {
           <li key={`${title}-link-${index}`} className="min-h-[1.5rem] sm:min-h-[1.75rem]">
             <a
               href={link.href}
-              className="text-xs sm:text-sm text-slate-400 hover:text-white hover:underline transition-colors duration-200 active:text-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-blue-500 rounded px-1"
+              className={`text-xs sm:text-sm ${link.color === 'white' ? 'text-white' : 'text-slate-400'} hover:text-[#1BACE1]  transition-colors duration-200 active:text-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-blue-500 rounded px-1`}
+              style={{ fontWeight: link.font === 'bold' ? 'bold' : 'normal' }}
             >
               {link.label}
             </a>

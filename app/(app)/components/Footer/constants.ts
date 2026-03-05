@@ -51,11 +51,11 @@ export const FOOTER_SECTIONS = {
   SERVICES: {
     title: 'NOS SERVICES',
     links: [
-      { label: 'À PROPOS', href: '/apropos' },
-      { label: 'BLOG', href: '/blog' },
-      { label: 'FORMATION', href: '/formation' },
-      { label: 'ASSISTANCE CLIENT', href: '/assistance' },
-      { label: 'NOUS CONTACTER', href: '/contact' },
+      { label: 'À PROPOS', href: '/apropos', color : 'white' , font : 'bold' },
+      { label: 'BLOG', href: '/blog' , color : 'white' , font : 'bold'},
+      { label: 'FORMATION', href: '/formation', color : 'white' , font : 'bold' },
+      { label: 'ASSISTANCE CLIENT', href: '/assistance' , color : 'white' , font : 'bold'},
+      { label: 'NOUS CONTACTER', href: '/contact' , color : 'white' , font : 'bold'},
     ],
   },
 } as const;
