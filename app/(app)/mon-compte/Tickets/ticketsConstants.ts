@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image';
-import lapImage from '../../../../../public/Dashboard/Ticket/ticketImage.png'
+import lapImage from '@/public/Dashboard/Ticket/ticketImage.png'
 
 export type TicketStatus = 'En attente' | 'En cours' | 'Résolu' | 'Fermé';
 

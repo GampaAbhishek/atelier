@@ -2,9 +2,10 @@
 
 import React, { useState } from 'react'
 import Form from '../components/MonCompte/Form'
-import Tickets from '../components/historique/Tickets/Tickets'
+import Tickets from './Tickets/Tickets'
 
 function page() {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [activeTab, setActiveTab] = useState<'form' | 'tickets'>('form')
 
   return (

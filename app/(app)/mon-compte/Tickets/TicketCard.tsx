@@ -5,8 +5,8 @@ import { useRouter } from "next/navigation";
 import type { TicketData } from "./ticketsConstants";
 import { TICKET_STATUS_COLORS } from "./ticketsConstants";
 import Image from "next/image";
-import ticketImage from "../../../../../public/Dashboard/Ticket/ticket.png";
-import AddTicketIcon from "../../../../../public/Dashboard/Ticket/ticketAddButton.png";
+import ticketImage from "@/public/Dashboard/Ticket/ticket.png";
+import AddTicketIcon from "@/public/Dashboard/Ticket/ticketAddButton.png";
 
 interface TicketCardProps {
   ticket: TicketData;

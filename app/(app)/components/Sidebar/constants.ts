@@ -29,10 +29,10 @@ export const SIDEBAR_MENU_ITEMS: MenuItem[] = [
     path : '/dashboard',
   },
   {
-    id: 'historique',
-    label: 'Historique',
+    id: 'Indicateurs SLA',
+    label: 'Indicateurs SLA',
     icon: historiqueIcon,
-    path : '/historique',
+    path : '/indicateurs-sla',
   },
   {
     id: 'mon-compte',
