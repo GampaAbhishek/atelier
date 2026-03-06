@@ -30,7 +30,8 @@ const SideBar = memo(() => {
   const pathname = usePathname();
 
   useEffect(() => {
-    let currentMenuId = pathname.split('/')[1] || 'dashboard'; // Default to 'dashboard' if root
+    const currentMenuId = pathname.split('/')[1] || 'dashboard'; // Default to 'dashboard' if root
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setActiveMenuId(currentMenuId);
   }, [pathname]);
 

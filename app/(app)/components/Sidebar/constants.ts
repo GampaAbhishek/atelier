@@ -29,7 +29,7 @@ export const SIDEBAR_MENU_ITEMS: MenuItem[] = [
     path : '/dashboard',
   },
   {
-    id: 'Indicateurs SLA',
+    id: 'indicateurs-sla',
     label: 'Indicateurs SLA',
     icon: historiqueIcon,
     path : '/indicateurs-sla',
