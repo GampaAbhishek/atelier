@@ -35,6 +35,7 @@ const Header = memo(() => {
     console.log("Action clicked:", actionId);
   }, []);
 
+  // eslint-disable-next-line react-hooks/preserve-manual-memoization
   const handleProfileOptionSelect = useCallback((optionId: string) => {
     // TODO: Implement profile option handlers
     if (optionId === "logout") {
@@ -45,6 +46,10 @@ const Header = memo(() => {
         console.log("Go to profile clicked");
         // Implement navigation to profile
         route.push('/mon-compte')
+      }
+      if(optionId === "Mon parc") {
+        console.log("Go to settings clicked");
+        route.push('/mon-parc')
       }
       console.log("Profile option selected:", optionId);
     }
