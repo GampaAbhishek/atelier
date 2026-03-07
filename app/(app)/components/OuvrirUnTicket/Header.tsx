@@ -19,12 +19,12 @@ function Header() {
             Pour un traitement plus rapide, nous vous invitons à préciser :
           </span>
           <span className="text-black pl-4">
-            <li>
+            <ul>
               <li>le contexte de votre demande</li>
               <li>les actions réalisées avant le problème</li>
               <li>les messages d’erreur affichés</li>
               <li>des captures d’écran si possible</li>
-            </li>
+            </ul>
           </span>
           <span className="text-black">
             Plus votre description est précise, plus notre équipe pourra diagnostiquer et résoudre votre demande rapidement.
@@ -65,12 +65,12 @@ function Header() {
             Pour un traitement plus rapide, nous vous invitons à préciser :
           </span>
           <span className="text-black pl-4">
-            <li>
+            <ul>
               <li>le contexte de votre demande</li>
               <li>les actions réalisées avant le problème</li>
               <li>les messages d’erreur affichés</li>
               <li>des captures d’écran si possible</li>
-            </li>
+            </ul>
           </span>
           <span className="text-black">
             Plus votre description est précise, plus notre équipe pourra diagnostiquer et résoudre votre demande rapidement.

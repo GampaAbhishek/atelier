@@ -1,0 +1,29 @@
+.faqContainer {
+  scrollbar-width: 10px;
+  scrollbar-color: white #C0D5DA;
+  padding: 10px;
+}
+
+.faqContainer::-webkit-scrollbar {
+  width: 20px;
+}
+
+.faqContainer::-webkit-scrollbar-thumb:hover {
+  background: white;
+}
+
+.faqContainer::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 10px;
+}
+
+.faqContainer::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+  border: 2px solid white;
+  transition: background-color 0.2s;
+}
+
+.faqContainer::-webkit-scrollbar-thumb:hover {
+  background: white;
+}

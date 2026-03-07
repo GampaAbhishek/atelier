@@ -16,6 +16,7 @@ import DeviceTable from './DeviceSection';
 const MonParc: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'devices' | 'favorites'>('devices');
   const [devices, setDevices] = useState<typeof DEVICES>(DEVICES);
+  const [expandedDeviceId, setExpandedDeviceId] = useState<string | null>(null);
 
   const handleToggleFavorite = (deviceId: string) => {
     setDevices(
@@ -27,9 +28,16 @@ const MonParc: React.FC = () => {
     );
   };
 
-  const handleAddAction = (deviceId: string) => {
-    console.log(`Action triggered for device: ${deviceId}`);
-    // Add logic for the + button action
+  const handleAddAction = (deviceId: string) => {    
+    if (expandedDeviceId === deviceId) {
+      setExpandedDeviceId(null);
+    } else {
+      setExpandedDeviceId(deviceId);
+    }
+  };
+
+  const handleCloseExpanded = () => {
+    setExpandedDeviceId(null);
   };
 
   // Filter devices based on active tab
@@ -52,6 +60,8 @@ const MonParc: React.FC = () => {
         devices={filteredDevices}
         onToggleFavorite={handleToggleFavorite}
         onAddAction={handleAddAction}
+        expandedDeviceId={expandedDeviceId}
+        onCloseExpanded={handleCloseExpanded}
       />
     </div>
   );

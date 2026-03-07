@@ -6,6 +6,9 @@ export interface IDevice {
   status: 'online' | 'offline' | 'maintenance';
   lastConnection: string;
   isFavorite?: boolean;
+  ipAddress?: string;
+  model?: string;
+  manufacturer?: string;
 }
 
 export interface ITab {
@@ -26,16 +29,22 @@ export const DEVICES: IDevice[] = [
     folder: 'IMP PDV',
     status: 'online',
     lastConnection: '01/05/2010',
-    isFavorite: false
+    isFavorite: false,
+    ipAddress: '192.168.1.10',
+    model: 'Precision Tower 3620',
+    manufacturer: 'Dell Inc.'
   },
   {
     id: 'device-2',
-    name: 'Poste A',
+    name: 'Caroline\'s laptop',
     type: 'PC',
     folder: 'IMP redon',
     status: 'offline',
     lastConnection: '01/05/2010',
-    isFavorite: true
+    isFavorite: true,
+    ipAddress: '192.168.1.20',
+    model: 'ThinkPad X1 Carbon',
+    manufacturer: 'Lenovo'
   },
   {
     id: 'device-3',
@@ -44,7 +53,10 @@ export const DEVICES: IDevice[] = [
     folder: 'Nom',
     status: 'online',
     lastConnection: '01/05/2010',
-    isFavorite: false
+    isFavorite: false,
+    ipAddress: '192.168.1.30',
+    model: 'OptiPlex 7090',
+    manufacturer: 'Dell Inc.'
   },
   {
     id: 'device-4',
@@ -53,7 +65,10 @@ export const DEVICES: IDevice[] = [
     folder: 'Salle Serveurs',
     status: 'online',
     lastConnection: '01/05/2010',
-    isFavorite: false
+    isFavorite: false,
+    ipAddress: '192.168.1.250',
+    model: 'PowerEdge R750',
+    manufacturer: 'Dell Inc.'
   },
   {
     id: 'device-5',
@@ -62,7 +77,10 @@ export const DEVICES: IDevice[] = [
     folder: 'Bureau',
     status: 'offline',
     lastConnection: '30/04/2010',
-    isFavorite: true
+    isFavorite: true,
+    ipAddress: '192.168.1.100',
+    model: 'Color LaserJet Enterprise',
+    manufacturer: 'HP'
   }
 ];
 

@@ -2,14 +2,24 @@
 
 import React, { useState } from 'react'
 import Image from 'next/image'
-import AttachIcon from '@/public/OuvrirUnTicket/attach.svg';
+import AttachIcon from '@/public/OuvrirUnTicket/attach.svg'
+import { Dropdown } from './Dropdown'
+import { POSTE_OPTIONS, TYPE_OPTIONS, PRIORITE_OPTIONS, IMPACT_OPTIONS } from './dropdownConstants'
 
 function Ticket() {
   const [formData, setFormData] = useState<{
+    poste: string
+    type: string
+    priorite: string
+    impact: string
     sujet: string
     description: string
     piecesJointes: File[]
   }>({
+    poste: '',
+    type: '',
+    priorite: '',
+    impact: '',
     sujet: '',
     description: '',
     piecesJointes: []
@@ -20,6 +30,13 @@ function Ticket() {
     setFormData(prev => ({
       ...prev,
       [name]: value
+    }))
+  }
+
+  const handleDropdownChange = (fieldName: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [fieldName]: value
     }))
   }
 
@@ -39,6 +56,36 @@ function Ticket() {
   return (
     <div className='p-10'>
       <form onSubmit={handleSubmit} className='space-y-6'>
+
+{/* Dropdowns Row 1: Poste, Type, Priorité, Impact */}
+        <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 2xl:w-[40%] gap-6'>
+          <Dropdown
+            label='Poste'
+            options={POSTE_OPTIONS}
+            value={formData.poste}
+            onChange={(value) => handleDropdownChange('poste', value)}
+          />
+          <Dropdown
+            label='Type'
+            options={TYPE_OPTIONS}
+            value={formData.type}
+            onChange={(value) => handleDropdownChange('type', value)}
+          />
+          <Dropdown
+            label='Priorité'
+            options={PRIORITE_OPTIONS}
+            value={formData.priorite}
+            onChange={(value) => handleDropdownChange('priorite', value)}
+            variant='priority'
+          />
+          <Dropdown
+            label='Impact'
+            options={IMPACT_OPTIONS}
+            value={formData.impact}
+            onChange={(value) => handleDropdownChange('impact', value)}
+          />
+        </div>
+
         {/* Subject and Attachment Row */}
         <div className='sm:flex sm:flex-col md:flex md:flex-col lg:flex lg:flex-row gap-6'>
           {/* Subject */}
@@ -97,6 +144,8 @@ function Ticket() {
             )}
           </div>
         </div>
+
+        
 
         {/* Description */}
         <div>

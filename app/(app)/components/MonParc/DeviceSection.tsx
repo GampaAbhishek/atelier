@@ -1,6 +1,7 @@
 import React from 'react';
 import { IDevice } from './monParcConstants';
 import DeviceTableRow from './DeviceCard';
+import DeviceDetailsPanel from './DeviceDetailsPanel';
 
 /**
  * DeviceTable Component
@@ -14,12 +15,16 @@ interface DeviceTableProps {
   devices: IDevice[];
   onToggleFavorite: (deviceId: string) => void;
   onAddAction: (deviceId: string) => void;
+  expandedDeviceId: string | null;
+  onCloseExpanded: () => void;
 }
 
 const DeviceTable: React.FC<DeviceTableProps> = ({
   devices,
   onToggleFavorite,
-  onAddAction
+  onAddAction,
+  expandedDeviceId,
+  onCloseExpanded
 }) => {
   const TABLE_HEADERS = [
     { id: 'favorite', label: '', width: 'w-12' },
@@ -57,13 +62,21 @@ const DeviceTable: React.FC<DeviceTableProps> = ({
         </thead>
         <tbody>
           {devices.map((device, index) => (
-            <DeviceTableRow
-              key={device.id}
-              device={device}
-              onToggleFavorite={onToggleFavorite}
-              onAddAction={onAddAction}
-              index={index}
-            />
+            <React.Fragment key={device.id}>
+              <DeviceTableRow
+                device={device}
+                onToggleFavorite={onToggleFavorite}
+                onAddAction={onAddAction}
+                index={index}
+                onClose={onCloseExpanded}
+                expandedDeviceId={expandedDeviceId}
+              />
+              {expandedDeviceId === device.id && (
+                <DeviceDetailsPanel
+                  device={device}
+                />
+              )}
+            </React.Fragment>
           ))}
         </tbody>
       </table>

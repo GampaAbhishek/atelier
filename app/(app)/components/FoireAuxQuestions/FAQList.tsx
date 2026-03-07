@@ -2,6 +2,7 @@
 
 import React from "react";
 import FAQItem from "./FAQItem";
+import styles from "./FAQList.module.css";
 
 interface FAQ {
   id: number;
@@ -87,9 +88,11 @@ function FAQList() {
         </button>
       </div>
 
-      {faqData.map((faq) => (
+     <div className={`flex flex-col gap-3 sm:gap-4 h-[75vh] overflow-y-auto ${styles.faqContainer}`}>
+       {faqData.map((faq) => (
         <FAQItem key={faq.id} question={faq.question} answer={faq.answer} />
       ))}
+     </div>
     </div>
   );
 }
