@@ -104,7 +104,7 @@ function Ticket() {
           </div>
 
           {/* Attachment */}
-          <div className='md:flex-1  2xl:flex-none 2xl:w-[19.5%] '>
+          <div className='md:flex-1 max-sm:mt-6  2xl:flex-none 2xl:w-[19.5%] '>
             <label className='block text-sm font-medium text-gray-700 mb-2'>
               Pièce jointe
             </label>
