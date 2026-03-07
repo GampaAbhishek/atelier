@@ -1,6 +1,8 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
+import AttachIcon from '@/public/OuvrirUnTicket/attach.svg';
 
 function Ticket() {
   const [formData, setFormData] = useState<{
@@ -38,9 +40,9 @@ function Ticket() {
     <div className='p-10'>
       <form onSubmit={handleSubmit} className='space-y-6'>
         {/* Subject and Attachment Row */}
-        <div className='sm:flex sm:flex-col md:flex md:flex-row gap-6'>
+        <div className='sm:flex sm:flex-col md:flex md:flex-col lg:flex lg:flex-row gap-6'>
           {/* Subject */}
-          <div className='md:flex-1 2xl:flex-none'>
+          <div className='md:flex-1 2xl:flex-none 2xl:w-[19.5%]'>
             <label className='block text-sm font-medium text-gray-700 mb-2'>
               Sujet
             </label>
@@ -55,11 +57,11 @@ function Ticket() {
           </div>
 
           {/* Attachment */}
-          <div className='md:flex-1  2xl:flex-none '>
+          <div className='md:flex-1  2xl:flex-none 2xl:w-[19.5%] '>
             <label className='block text-sm font-medium text-gray-700 mb-2'>
               Pièce jointe
             </label>
-            <div className='sm:flex sm:flex-row md:flex md:flex-row  md:gap-2 w-full '>
+            <div className='sm:flex relative sm:flex-row md:flex md:flex-row  md:gap-2 w-full '>
               <input
                 type='file'
                 onChange={handleFileChange}
@@ -71,14 +73,21 @@ function Ticket() {
                 htmlFor='file-input'
                 className='flex-1 px-4 py-2 border border-gray-300 rounded-lg bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center w-full '
               >
-                <span className='text-gray-600'>Sélectionner fichier</span>
+                <span className='text-gray-600 max-sm:text-sm'>Sélectionner fichier</span>
               </label>
               <button
                 type='button'
                 onClick={() => document.getElementById('file-input')?.click()}
-                className='px-6 py-2 max-sm:mt-4 md:mt-0 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg font-medium transition-colors'
+                className='max-sm:px-2 md:px-6 absolute max-sm:top-[2%] md:right-0 max-sm:right-0 right-10 max-sm:py-1.5 py-[8.5px] bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg font-medium transition-colors'
               >
-                Ajouter une pièce jointe
+                Ajouter
+                <Image
+                  src={AttachIcon}
+                  alt='Attach Icon'
+                  width={15}
+                  height={15}
+                  className='inline-block ml-2'
+                />
               </button>
             </div>
             {formData.piecesJointes.length > 0 && (

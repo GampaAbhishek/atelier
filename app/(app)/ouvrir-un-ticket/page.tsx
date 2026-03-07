@@ -1,4 +1,3 @@
-import React from 'react'
 import Header from '../components/OuvrirUnTicket/Header'
 import Ticket from '../components/OuvrirUnTicket/Ticket'
 
