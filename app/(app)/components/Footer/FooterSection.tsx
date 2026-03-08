@@ -10,6 +10,7 @@ interface FooterLinkProps {
 interface FooterSectionProps {
   title: string;
   links: FooterLinkProps[];
+  link:string;
 }
 
 /**
@@ -17,13 +18,14 @@ interface FooterSectionProps {
  * Responsible for rendering a single section of footer links
  * Follows Single Responsibility Principle
  */
-const FooterSection: React.FC<FooterSectionProps> = ({ title, links } : {
+const FooterSection: React.FC<FooterSectionProps> = ({ title, links,link } : {
     title: string;
     links: FooterLinkProps[];
+    link:string;
 }) => {
   return (
     <div className="flex flex-col ">
-      <h3 className="text-xs sm:text-sm font-bold uppercase tracking-wider mb-3 sm:mb-4 text-white leading-tight">{title}</h3>
+      <a href={link} className="text-xs sm:text-sm font-bold uppercase tracking-wider mb-3 sm:mb-4 text-white leading-tight">{title}</a>
       <ul className=" list-none p-0 m-0">
         {links.map((link, index) => (
           <li key={`${title}-link-${index}`} className="min-h-[1.5rem] sm:min-h-[1.75rem]">

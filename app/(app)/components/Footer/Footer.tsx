@@ -77,6 +77,7 @@ const Footer: React.FC = () => {
               key={section.key}
               title={section.title}
               links={[...section.links]}
+              link={section.link}
             />
           ))}
         </div>
@@ -84,9 +85,12 @@ const Footer: React.FC = () => {
 
       {/* Bottom bar with legal info */}
       <div className="max-w-7xl mx-auto pt-6 sm:pt-8">
-        <p className="text-2xl sm:text-lg text-slate-400 ml-3">© 2020 
-          <span style={{ color: '#00adfc' }} className='ml-2 mr-2'><a style={{ color: '#00adfc' }} href="https://atelierinfonumerik.fr">Atelier Infonumerik</a></span>
-           – Tous droits réservés. – Prestataire informatique de l’extrême dans toute la France.</p>
+        <div className="flex flex-row gap-4 items-center">
+          <p className="text-sm sm:text-sm text-slate-400 ml-3">© 2020 
+            <span style={{ color: '#00adfc' }} className='ml-2 mr-2 text-sm'><a style={{ color: '#00adfc' }} href="https://atelierinfonumerik.fr" className='text-sm'>Atelier Infonumerik</a></span>
+             – Tous droits réservés. – Prestataire informatique de l&apos;extrême dans toute la France.</p>
+          <FooterSocial socialLinks={FOOTER_SOCIAL_LINKS} />
+        </div>
       </div>
     </footer>
   );
