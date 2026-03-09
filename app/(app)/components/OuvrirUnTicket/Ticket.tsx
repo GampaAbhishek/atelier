@@ -125,7 +125,7 @@ function Ticket() {
               <button
                 type='button'
                 onClick={() => document.getElementById('file-input')?.click()}
-                className='max-sm:px-2 md:px-6 absolute max-sm:top-[2%] md:right-0 max-sm:right-0 right-10 max-sm:py-1.5 py-[8.5px] bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg font-medium transition-colors'
+                className='max-sm:px-2 md:px-6 absolute max-sm:top-[7%] top-[7%] md:right-1 max-sm:right-1 right-10 max-sm:py-1 py-1.5 bg-[#1BACE1] text-white rounded-lg font-medium transition-colors'
               >
                 Ajouter
                 <Image

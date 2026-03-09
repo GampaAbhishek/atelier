@@ -14,7 +14,7 @@ interface ContactSectionProps {
  */
 const ContactSection = memo(({ title, contacts }: ContactSectionProps) => (
   <div className="border rounded-2xl border-black h-auto mt-4 p-4">
-    <div className="flex flex-col items-center justify-center gap-4">
+    <div className="flex flex-col justify-center gap-4">
       <span className="text-[16px] font-medium text-black">{title}</span>
       <div className="flex flex-col gap-4 w-full">
         {contacts.map((contact) => (
