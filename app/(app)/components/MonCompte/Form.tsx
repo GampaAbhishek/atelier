@@ -126,7 +126,7 @@ function Form() {
             </div>
 
             {/* Row 2: Téléphone, E-mail */}
-            <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-4 gap-5 mb-6">
+            <div className="grid sm:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-6 gap-5 mb-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Téléphone
@@ -140,7 +140,7 @@ function Form() {
                   
                 />
               </div>
-              <div>
+              <div className="sm:col-span-1 lg:col-span-2 xl:col-span-2 2xl:col-span-2">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   E-mail
                 </label>
@@ -212,7 +212,7 @@ function Form() {
           </div>
 
           {/* Socialite and Site Web */}
-          <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-4  gap-5 mb-10">
+          <div className="grid sm:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-6 gap-5 mb-10">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 société
@@ -226,7 +226,7 @@ function Form() {
                 className="w-full bg-white text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
               />
             </div>
-            <div>
+            <div className="sm:col-span-1 lg:col-span-2 xl:col-span-2 2xl:col-span-2">
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Site web
               </label>
@@ -239,6 +239,15 @@ function Form() {
                 className="w-full bg-white text-[#8C8C8C] px-4 py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
               />
             </div>
+          </div>
+
+          <div className="flex justify-end pb-4 2xl:w-[50%]">
+            <button
+              type="submit"
+              className="px-6 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg font-medium transition-colors"
+            >
+              Changer mes coordonnées
+            </button>
           </div>
         </div>
       </div>
