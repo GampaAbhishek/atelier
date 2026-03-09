@@ -19,12 +19,12 @@ function Header() {
             Pour un traitement plus rapide, nous vous invitons à préciser :
           </span>
           <span className="text-black pl-4">
-            <ul>
+            <li>
               <li>le contexte de votre demande</li>
               <li>les actions réalisées avant le problème</li>
               <li>les messages d’erreur affichés</li>
               <li>des captures d’écran si possible</li>
-            </ul>
+            </li>
           </span>
           <span className="text-black">
             Plus votre description est précise, plus notre équipe pourra diagnostiquer et résoudre votre demande rapidement.
@@ -39,7 +39,7 @@ function Header() {
             alt="Ticket Information"
             width={800}
             height={400}
-            className="w-full 2xl:w-[40%] h-auto object-cover rounded-lg"
+            className="w-full 2xl:w-[40%] 3xl:w-[30%] 3xl:h-[400px] h-auto object-cover rounded-lg"
           />
         </div>
       </div>

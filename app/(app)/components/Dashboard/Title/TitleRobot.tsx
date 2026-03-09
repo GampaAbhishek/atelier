@@ -3,6 +3,7 @@
 import { memo, useMemo } from 'react';
 import Image from 'next/image';
 import { TITLE_IMAGES, ROBOT_SIZES, LAYOUT_POSITIONS } from './titleConstants';
+import styles from './TitleRobot.module.css';
 
 interface TitleRobotProps {
   className?: string;
@@ -19,7 +20,7 @@ const TitleRobot = memo(({ className = '' }: TitleRobotProps) => {
   }, []);
 
   return (
-    <div className={`absolute md:block max-sm:top-[-14%]  max-sm:h-[100%] max-sm:right-[5%]  md:top-[-10%] md:right-[10%] lg:top-[-32%] xl:top-[-13%] 2xl:top-[-25%] 2xl:w-[12vw] 2xl:h-[10vh] w-32 sm:w-44 md:w-56 z-10 ${className}`}>
+    <div className={`${styles.robot} absolute md:block max-sm:top-[-14%]  max-sm:h-screen max-sm:right-[5%]  md:top-[-10%] md:right-[10%] lg:top-[-32%] xl:top-[-13%] 2xl:top-[-25%] 2xl:w-[12vw] 2xl:h-[10vh] w-32 sm:w-44 md:w-56 z-10 ${className}`}>
       <Image
         src={TITLE_IMAGES.robot}
         alt="Title Robot Character"

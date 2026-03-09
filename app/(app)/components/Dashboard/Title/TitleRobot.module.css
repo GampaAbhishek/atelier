@@ -1,0 +1,11 @@
+@media (min-width: 1920px) {
+  .robot {
+    width: 16vw;
+  }
+}
+
+@media (min-width: 2560px) {
+  .robot {
+    width: 12vw;
+  }
+}

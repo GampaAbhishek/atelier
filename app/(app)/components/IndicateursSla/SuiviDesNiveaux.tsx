@@ -15,18 +15,18 @@ function SuiviDesNiveaux() {
             <p className="text-[15px]">{level.description}</p>
             <div className="flex justify-between w-full">
              <div className="flex flex-col justify-center items-center">
-                <h4 className="text-sm max-sm:text-[10px] font-semibold text-white mb-1.5">
+                <h4 className="text-sm max-sm:text-[10px] 2xl:text-[12px] font-semibold text-white mb-1.5">
                     Temps de réponse
                 </h4>
-                <p className="text-lg max-sm:text-[10px] font-bold text-white leading-relaxed">
+                <p className="text-lg max-sm:text-[10px] 2xl:text-[13px] font-bold text-white leading-relaxed">
                     {level.times.responseTime}
                 </p>
              </div>
              <div className="flex flex-col justify-center items-center">
-                <h4 className="text-sm max-sm:text-[10px] font-semibold text-white mb-1.5">
+                <h4 className="text-sm max-sm:text-[10px] 2xl:text-[12px] font-semibold text-white mb-1.5">
                     Temps de résolution
                 </h4>
-                <p className="text-lg max-sm:text-[10px] font-bold text-white leading-relaxed">
+                <p className="text-lg max-sm:text-[10px] 2xl:text-[13px] font-bold text-white leading-relaxed">
                     {level.times.resolutionTime}
                 </p>
              </div>

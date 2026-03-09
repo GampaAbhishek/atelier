@@ -10,7 +10,7 @@ function Contract() {
       {ContractMspConstants.map((contract: ContractMspConstantInterface) => (
         <div
           key={contract.id}
-          className="flex flex-col gap-2 p-4 bg-white rounded-lg shadow-md"
+          className="flex flex-col gap-2 p-4 bg-white rounded-lg shadow-md "
         >
           <div className="flex items-center justify-center gap-2">
             <Image
@@ -50,7 +50,7 @@ function Contract() {
           </div>
           <div className="flex flex-col items-center gap-2">
             <h3 className="text-sm font-semibold text-[#024272]">
-              Temps réponse
+              temps de réponse
             </h3>
              <ul className="text-sm text-[#024272] list-disc list-inside">
            <div className="grid grid-cols-2 gap-2">

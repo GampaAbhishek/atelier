@@ -75,9 +75,7 @@ function Form() {
             height={400}
             className="w-full h-auto object-cover rounded-lg"
           />
-          <h1 className="text-[#1BACE1] flex w-full justify-center">
-            Bonjour <br /> Caroline
-          </h1>
+          
         </div>
         <div className="w-full">
           {/* Personal Information Section */}
@@ -128,7 +126,7 @@ function Form() {
             </div>
 
             {/* Row 2: Téléphone, E-mail */}
-            <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6 gap-6 mb-6">
+            <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-4 gap-5 mb-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Téléphone
@@ -168,7 +166,7 @@ function Form() {
                 value={formData.adresse}
                 onChange={handleInputChange}
                 
-                className="w-full 2xl:w-[50%] bg-white px-4 text-[#8C8C8C] py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                className="w-full 2xl:w-[49%] bg-white px-4 text-[#8C8C8C] py-2 border border-[#9AA4EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
               />
             </div>
 
@@ -214,10 +212,10 @@ function Form() {
           </div>
 
           {/* Socialite and Site Web */}
-          <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6  gap-6 mb-10">
+          <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-4  gap-5 mb-10">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Socialite
+                société
               </label>
               <input
                 type="text"
@@ -264,7 +262,7 @@ function Form() {
             />
           </div>
 
-          <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6 gap-6 mb-6">
+          <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-4 2xl:gap-2 gap-6 mb-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Mot de passe actuel

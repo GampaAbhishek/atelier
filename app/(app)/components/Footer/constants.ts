@@ -79,11 +79,12 @@ export const FOOTER_LEGAL = {
 } as const;
 
 export const FOOTER_SOCIAL_LINKS = {
-  instagram: 'https://instagram.com/atelierinfosumerik',
-  youtube: 'https://youtube.com/atelierinfosumerik',
-  twitter: 'https://twitter.com/atelierinfosumerik',
+  instagram: 'https://www.instagram.com/atelier_infonumerik',
+  youtube: 'https://www.youtube.com/@Atelierinfonumerik',
+  twitter: 'https://twitter.com/atelinfonumerik',
   linkedin: 'https://linkedin.com/company/atelierinfosumerik',
-  google: 'https://google.com/maps/search/atelierinfosumerik',
+  google: 'https://www.linkedin.com/company/atelier-infonumerik/?originalSubdomain=fr',
+  facebook:"https://www.facebook.com/Atelier-Infonumerik-102562661499299/"
 } as const;
 
 export const FOOTER_SECTION_KEYS = [

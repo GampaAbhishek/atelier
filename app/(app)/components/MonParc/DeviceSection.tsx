@@ -3,6 +3,9 @@ import { IDevice } from './monParcConstants';
 import DeviceTableRow from './DeviceCard';
 import DeviceDetailsPanel from './DeviceDetailsPanel';
 
+type SortField = 'name' | 'type' | 'status' | 'lastConnection' | null;
+type SortOrder = 'asc' | 'desc';
+
 /**
  * DeviceTable Component
  * Displays devices in a table format with columns for Appareil, Type, Dossier, Statut, etc.
@@ -17,6 +20,9 @@ interface DeviceTableProps {
   onAddAction: (deviceId: string) => void;
   expandedDeviceId: string | null;
   onCloseExpanded: () => void;
+  sortField?: SortField;
+  sortOrder?: SortOrder;
+  onSort?: (field: SortField) => void;
 }
 
 const DeviceTable: React.FC<DeviceTableProps> = ({
@@ -24,17 +30,25 @@ const DeviceTable: React.FC<DeviceTableProps> = ({
   onToggleFavorite,
   onAddAction,
   expandedDeviceId,
-  onCloseExpanded
+  onCloseExpanded,
+  sortField,
+  sortOrder,
+  onSort
 }) => {
   const TABLE_HEADERS = [
-    { id: 'favorite', label: '', width: 'w-12' },
-    { id: 'name', label: 'Appareil', width: 'w-25' },
-    { id: 'type', label: 'Type', width: 'w-24' },
-    { id: 'folder', label: 'Dossier', width: 'w-32' },
-    { id: 'status', label: 'Statut', width: 'w-24' },
-    { id: 'lastConnection', label: 'Dernière connexion', width: 'w-32' },
-    { id: 'action', label: '', width: 'w-12' }
+    { id: 'favorite', label: '', width: 'w-12', sortable: false },
+    { id: 'name', label: 'Appareil', width: 'w-25', sortable: true },
+    { id: 'type', label: 'Type', width: 'w-24', sortable: true },
+    { id: 'folder', label: 'Dossier', width: 'w-32', sortable: false },
+    { id: 'status', label: 'Statut', width: 'w-24', sortable: true },
+    { id: 'lastConnection', label: 'Dernière connexion', width: 'w-32', sortable: true },
+    { id: 'action', label: '', width: 'w-12', sortable: false }
   ];
+
+  const getSortIndicator = (headerId: string) => {
+    if (sortField !== headerId) return null;
+    return sortOrder === 'asc' ? ' ↑' : ' ↓';
+  };
 
   if (devices.length === 0) {
     return (
@@ -53,9 +67,13 @@ const DeviceTable: React.FC<DeviceTableProps> = ({
             {TABLE_HEADERS.map((header) => (
               <th
                 key={header.id}
-                className={`px-4 py-3 text-left text-sm font-semibold text-gray-700 ${header.width}`}
+                className={`px-4 py-3 text-left text-sm font-semibold text-gray-700 ${header.width} ${
+                  header.sortable ? 'cursor-pointer hover:bg-gray-100 select-none' : ''
+                }`}
+                onClick={() => header.sortable && onSort?.(header.id as SortField)}
               >
                 {header.label}
+                {header.sortable && getSortIndicator(header.id)}
               </th>
             ))}
           </tr>

@@ -296,16 +296,16 @@ export default function TicketDetailPage() {
   const renderFAQ = () => (
     <div className="space-y-3">
       {/* Question Input */}
-      <div className="flex max-sm:flex max-sm:flex-col max-sm:items-start gap-3 items-end">
+     <div className="flex max-sm:flex max-sm:flex-col max-sm:items-start gap-3 items-end">
         <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
           <Image src={profileImage} alt="User" width={24} height={24} />
         </div>
         <input
           type="text"
           placeholder="Comment connecter mon iPhone sans rajouter mon adresse mail ?"
-          className=" w-full text-black max-sm:text-black max-sm:text-[15px] max-sm:w-full 2xl:w-[30%] px-4 py-2 border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] texxt-[#8C8C8C]"
+          className="flex-1 px-4 py-2 max-sm:text-black max-sm:text-[15px] max-sm:w-full border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] text-[#8C8C8C]"
         />
-        <button className="px-6 py-2 max-sm:w-full bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors font-semibold whitespace-nowrap">
+        <button className="px-6 py-2 max-sm:w-full bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors font-semibold">
           Chercher une question
         </button>
       </div>

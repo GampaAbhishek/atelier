@@ -17,7 +17,7 @@ function page() {
         <h1 className="text-3xl font-bold pl-2 text-[#024272]">Suivi des niveaux</h1>
         <SuiviDesNiveaux/>
       </div>
-      <div className="flex flex-col gap-4 mt-8">
+      <div className="flex flex-col gap-4 mt-8 2xl:w-[106.5%]">
         <h1 className="text-3xl font-bold pl-2 text-[#024272]">Contrat MSP</h1>
         <Contract/>
       </div>

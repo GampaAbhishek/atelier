@@ -67,7 +67,7 @@ const SidebarContent = memo(
         {/* Contact Section - Sticky Bottom */}
         <div className="mt-auto pt-4 border-t border-gray-200">
           <ContactSection
-            title="Nos contacts"
+            title="Support"
             contacts={SIDEBAR_CONTACT_INFO}
           />
         </div>
