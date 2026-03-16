@@ -24,11 +24,17 @@ export class AuthService implements IAuthService {
         body: JSON.stringify(credentials),
       });
 
-      if (!response.ok) {
-        const error = await response.json();
-        console.log("Login error response:", error);
-        throw new Error(error.message || "Login failed");
-      }
+        if (!response.ok) {
+          if (response.status === 401) {
+            if (typeof window !== "undefined") {
+              window.location.href = "/login";
+            }
+            throw new Error("Unauthorized. Redirecting to login.");
+          }
+          const error = await response.json();
+          console.log("Login error response:", error);
+          throw new Error(error.message || "Login failed");
+        }
 
       const data: TokenResponse = await response.json();
       return data;
@@ -49,9 +55,15 @@ export class AuthService implements IAuthService {
         },
       });
 
-      if (!response.ok) {
-        throw new Error("Token validation failed");
-      }
+        if (!response.ok) {
+          if (response.status === 401) {
+            if (typeof window !== "undefined") {
+              window.location.href = "/login";
+            }
+            throw new Error("Unauthorized. Redirecting to login.");
+          }
+          throw new Error("Token validation failed");
+        }
 
       const data: TokenInfo = await response.json();
       return data;

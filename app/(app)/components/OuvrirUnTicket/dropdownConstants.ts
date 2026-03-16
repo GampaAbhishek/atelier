@@ -22,9 +22,9 @@ export const PRIORITE_OPTIONS: DropdownOption[] = [
 ]
 
 export const IMPACT_OPTIONS: DropdownOption[] = [
-  { value: 'aucun', label: 'Aucun impact' },
+  { value: 'aucun_impact', label: 'Aucun impact' },
   { value: 'site_desactive', label: 'Site désactivé' },
-  { value: 'probleme_serveur', label: 'Problème de serveur' },
+  { value: 'probleme_de_serveur', label: 'Problème de serveur' },
   { value: 'mineur', label: 'Mineur' },
   { value: 'majeur', label: 'Majeur' },
   { value: 'crise', label: 'Crise' }
