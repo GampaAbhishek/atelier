@@ -28,6 +28,9 @@ function Form() {
     alerteEmail: true,
     alerteSMS: false,
   });
+  const [statusMessage, setStatusMessage] = useState<string | null>(null);
+  const [statusType, setStatusType] = useState<"success" | "error" | null>(null);
+
   console.log("formData", formData);
 
   const {
@@ -155,6 +158,10 @@ function Form() {
     ) as CustomerUpdatePayload;
     const updated = await updateCustomerDetails(filteredPayload);
     if (updated) {
+      setStatusType("success");
+      setStatusMessage("Coordonnées mises à jour avec succès.");
+      setTimeout(() => setStatusMessage(null), 5000);
+
       setFormData((prev) => ({
         ...prev,
         civite: updated.civilite || prev.civite,
@@ -182,6 +189,10 @@ function Form() {
         socialite: updated.societe || formData.socialite,
         siteWeb: updated.site_web || formData.siteWeb,
       });
+    } else {
+      setStatusType("error");
+      setStatusMessage(updateError || "Une erreur est survenue lors de la mise à jour.");
+      setTimeout(() => setStatusMessage(null), 5000);
     }
   };
 
@@ -203,6 +214,18 @@ function Form() {
           <div className="w-full">
             {/* Personal Information Section */}
             <form onSubmit={handleUpdateCustomer}>
+              {statusMessage && (
+                <div
+                  className={`mb-6 rounded-md px-4 py-3 text-sm border ${
+                    statusType === "success"
+                      ? "bg-emerald-50 text-emerald-800 border-emerald-200"
+                      : "bg-red-50 text-red-800 border-red-200"
+                  }`}
+                  role="alert"
+                >
+                  {statusMessage}
+                </div>
+              )}
               <div className="mb-10 w-full">
                 {/* Row 1: Civité, Nom, Prénom */}
                 <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6 gap-6 mb-6">
