@@ -54,11 +54,6 @@ const TicketCard: React.FC<TicketCardProps> = ({ ticket }) => {
                 <h4 className="sm:text-base md:text-sm lg:text-sm xl:text-lg 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl font-semibold text-slate-700 mb-1.5">
                   Description
                 </h4>
-                {ticket?.image_url && (
-                  <span className=" font-bold sm:text-base md:text-sm lg:text-sm xl:text-lg 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl text-[#383E68] ">
-                    {ticket.image_url}
-                  </span>
-                )}
               </div>
               <p className="sm:text-base md:text-sm lg:text-sm xl:text-lg 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl text-gray-600 leading-relaxed line-clamp-2 sm:line-clamp-3">
                 {ticket.description}
