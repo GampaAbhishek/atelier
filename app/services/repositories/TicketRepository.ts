@@ -4,7 +4,7 @@
  * Follows Repository and Dependency Injection patterns
  */
 
-import { ITicketService, TicketFormData, TicketSubmitData, TicketResponse, ValidationError } from "../interfaces/ITicketService";
+import { ITicketService, TicketFormData, TicketSubmitData, TicketResponse, TicketDetailResponse, TimerStatusResponse, ValidationError } from "../interfaces/ITicketService";
 import { IFileValidator } from "../interfaces/IFileValidator";
 
 export class TicketRepository {
@@ -91,5 +91,59 @@ export class TicketRepository {
    */
   getValidationErrors(data: TicketFormData): ValidationError[] {
     return this.ticketService.validateTicketData(data);
+  }
+
+  /**
+   * Get ticket details by ID
+   */
+  async getTicketDetails(ticketId: number, token: string): Promise<{ success: boolean; data?: TicketDetailResponse; error?: string }> {
+    try {
+      const response = await this.ticketService.getTicketDetails(ticketId, token);
+      return {
+        success: true,
+        data: response,
+      };
+    } catch (error) {
+      return {
+        success: false,
+        error: error instanceof Error ? error.message : "Une erreur s'est produite",
+      };
+    }
+  }
+
+  /**
+   * Toggle timer for a ticket
+   */
+  async toggleTimer(ticketId: number, token: string): Promise<{ success: boolean; data?: TimerStatusResponse; error?: string }> {
+    try {
+      const response = await this.ticketService.toggleTimer(ticketId, token);
+      return {
+        success: true,
+        data: response,
+      };
+    } catch (error) {
+      return {
+        success: false,
+        error: error instanceof Error ? error.message : "Une erreur s'est produite",
+      };
+    }
+  }
+
+  /**
+   * Get timer status for a ticket
+   */
+  async getTimerStatus(ticketId: number, token: string): Promise<{ success: boolean; data?: TimerStatusResponse; error?: string }> {
+    try {
+      const response = await this.ticketService.getTimerStatus(ticketId, token);
+      return {
+        success: true,
+        data: response,
+      };
+    } catch (error) {
+      return {
+        success: false,
+        error: error instanceof Error ? error.message : "Une erreur s'est produite",
+      };
+    }
   }
 }

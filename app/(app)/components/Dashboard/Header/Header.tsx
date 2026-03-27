@@ -12,6 +12,7 @@ import {
   PROFILE_MENU_OPTIONS,
 } from "./headerConstants";
 import { useRouter } from "next/navigation";
+import { CookieManager } from "@/app/utils/CookieManager";
 
 const Header = memo(() => {
   const [currentLanguage, setCurrentLanguage] = useState(LANGUAGE_OPTIONS[0]); // Default to first language
@@ -38,21 +39,29 @@ const Header = memo(() => {
   // eslint-disable-next-line react-hooks/preserve-manual-memoization
   const handleProfileOptionSelect = useCallback((optionId: string) => {
     // TODO: Implement profile option handlers
-    if (optionId === "logout") {
-      console.log("Logout clicked");
-      // Implement logout logic
-    } else {
-      if(optionId === "profile") {
-        console.log("Go to profile clicked");
-        // Implement navigation to profile
-        route.push('/mon-compte')
-      }
-      if(optionId === "Mon parc") {
-        console.log("Go to settings clicked");
-        route.push('/mon-parc')
-      }
-      console.log("Profile option selected:", optionId);
+
+    if (optionId === "profile") {
+      console.log("Go to profile clicked");
+      // Implement navigation to profile
+      route.push("/mon-compte");
     }
+    if (optionId === "Mon parc") {
+      console.log("Go to settings clicked");
+      route.push("/mon-parc");
+    }
+    if (optionId === "Déconnexion") {
+      // remove token and customerId from localStorage
+      localStorage.removeItem("atelier_access_token");
+      localStorage.removeItem("atelier_customer_id");
+      localStorage.removeItem("atelier_refresh_token");
+      CookieManager.deleteCookie("atelier_access_token");
+      CookieManager.deleteCookie("atelier_customer_id");
+      CookieManager.deleteCookie("atelier_refresh_token");
+      console.log("Logout clicked");
+      route.push("/login");
+    }
+
+    console.log("Profile option selected:", optionId);
   }, []);
 
   return (

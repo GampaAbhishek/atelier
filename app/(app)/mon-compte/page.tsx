@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react'
 import Form from '../components/MonCompte/Form'
-import Tickets from './Tickets/Tickets'
+import Tickets from '../components/Dashboard/Tickets/Tickets'
+// import Tickets from './Tickets/Tickets'
 
 function page() {
   // eslint-disable-next-line react-hooks/rules-of-hooks

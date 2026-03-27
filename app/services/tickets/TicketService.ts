@@ -9,6 +9,8 @@ import {
   TicketFormData,
   TicketSubmitData,
   TicketResponse,
+  TicketDetailResponse,
+  TimerStatusResponse,
   ValidationError,
 } from "../interfaces/ITicketService";
 
@@ -139,5 +141,110 @@ export class TicketService implements ITicketService {
     }
 
     return errors;
+  }
+
+  /**
+   * Get ticket details by ID
+   */
+  async getTicketDetails(ticketId: number, token: string): Promise<TicketDetailResponse> {
+    try {
+      const response = await fetch(`${API_BASE_URL}/tickets/${ticketId}`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        if (response.status === 401) {
+          if (typeof window !== "undefined") {
+            window.location.href = "/login";
+          }
+          throw new Error("Unauthorized. Redirecting to login.");
+        }
+        const error = await response.json().catch(() => ({}));
+        throw new Error(
+          error.message || `Failed to get ticket details: ${response.statusText}`
+        );
+      }
+
+      const data: TicketDetailResponse = await response.json();
+      return data;
+    } catch (error) {
+      throw new Error(
+        `Ticket details error: ${error instanceof Error ? error.message : "Unknown error"}`
+      );
+    }
+  }
+
+  /**
+   * Toggle timer for a ticket (start/stop)
+   */
+  async toggleTimer(ticketId: number, token: string): Promise<TimerStatusResponse> {
+    try {
+      const response = await fetch(`${API_BASE_URL}/tickets/${ticketId}/timer`, {
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        if (response.status === 401) {
+          if (typeof window !== "undefined") {
+            window.location.href = "/login";
+          }
+          throw new Error("Unauthorized. Redirecting to login.");
+        }
+        const error = await response.json().catch(() => ({}));
+        throw new Error(
+          error.message || `Failed to toggle timer: ${response.statusText}`
+        );
+      }
+
+      const data: TimerStatusResponse = await response.json();
+      return data;
+    } catch (error) {
+      throw new Error(
+        `Timer toggle error: ${error instanceof Error ? error.message : "Unknown error"}`
+      );
+    }
+  }
+
+  /**
+   * Get timer status for a ticket
+   */
+  async getTimerStatus(ticketId: number, token: string): Promise<TimerStatusResponse> {
+    try {
+      const response = await fetch(`${API_BASE_URL}/tickets/${ticketId}/timer`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        if (response.status === 401) {
+          if (typeof window !== "undefined") {
+            window.location.href = "/login";
+          }
+          throw new Error("Unauthorized. Redirecting to login.");
+        }
+        const error = await response.json().catch(() => ({}));
+        throw new Error(
+          error.message || `Failed to get timer status: ${response.statusText}`
+        );
+      }
+
+      const data: TimerStatusResponse = await response.json();
+      return data;
+    } catch (error) {
+      throw new Error(
+        `Timer status error: ${error instanceof Error ? error.message : "Unknown error"}`
+      );
+    }
   }
 }

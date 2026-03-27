@@ -4,6 +4,7 @@ import { TICKET_STATUS_COLORS } from "./ticketsConstants";
 import Image from "next/image";
 import ticketImage from "../../../../../public/Dashboard/Ticket/ticket.png";
 import AddTicketIcon from "../../../../../public/Dashboard/Ticket/ticketAddButton.png";
+import { useRouter } from "next/navigation";
 
 interface TicketCardProps {
   ticket: TicketData;
@@ -16,6 +17,22 @@ interface TicketCardProps {
  * Desktop: Side-by-side layout
  */
 const TicketCard: React.FC<TicketCardProps> = ({ ticket }) => {
+  console.log("ticket", ticket);
+
+  const router = useRouter();
+
+  const isBase64 = (str: string): boolean => {
+    try {
+      return btoa(atob(str)) === str;
+    } catch {
+      return false;
+    }
+  };
+
+  const handleClick = (ticketId: string) => () => {
+    // Handle click event for adding comment or viewing details
+    router.push(`/historique/${ticketId}`);
+  };
   return (
     <div className="bg-blue-100 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
       {/* Main Container */}
@@ -23,10 +40,16 @@ const TicketCard: React.FC<TicketCardProps> = ({ ticket }) => {
         {/* Image Section */}
         <div className="w-full lg:w-1/5 shrink-0">
           <Image
-            src={ticket.image}
+            src={
+              ticket.image_url && isBase64(ticket.image_url)
+                ? `data:image/png;base64,${ticket.image_url}`
+                : ticket.image.src
+            }
             alt={`Ticket ${ticket.ticketNumber}`}
             width={200}
             height={150}
+            placeholder="blur"
+            blurDataURL={ticket.image.blurDataURL}
             className="w-full h-32 sm:h-40 md:h-48 object-cover rounded-lg lg:h-56"
           />
         </div>
@@ -90,6 +113,7 @@ const TicketCard: React.FC<TicketCardProps> = ({ ticket }) => {
             <Image
               src={AddTicketIcon}
               alt="Add Comment Icon"
+              onClick={handleClick(ticket.id)}
               width={30}
               height={30}
               className="w-9 h-8 cursor-pointer hover:scale-110 transition-transform duration-200 sm:justify-end"

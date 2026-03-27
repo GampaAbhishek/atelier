@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import LoginPageImage from "../../../public/Login/loginImage.png";
+import LoginPageImage from "../../../public/Login/loginImageNew.png";
 import { useAuth } from "../../hooks/useAuth";
 
 function Login() {
@@ -71,7 +71,7 @@ function Login() {
 
   return (
     <div className="min-h-[90vh] bg-[#DCF1F9]">
-      <div className="bg-white rounded-2xl p-7 m-3 h-full flex max-md:flex-col">
+      <div className="bg-white rounded-2xl p-7 m-3 h-full flex max-sm:flex-col md:flex-row md:gap-7 xl:flex-row 2xl:flex-row">
         <Image
           src={LoginPageImage}
           alt="Login page image"
@@ -100,8 +100,8 @@ function Login() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   disabled={loading}
-                  className="border border-[#1BACE1] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#1BACE1] disabled:bg-gray-100"
-                  placeholder="jean.dupont@example.com"
+                  className="border border-[#1BACE1] bg-[#F4F9FF] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#1BACE1] disabled:bg-gray-100"
+                  
                 />
               </div>
 
@@ -114,8 +114,8 @@ function Login() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   disabled={loading}
-                  className="border border-[#1BACE1] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#1BACE1] disabled:bg-gray-100"
-                  placeholder="Entrez votre mot de passe"
+                  className="border border-[#1BACE1] bg-[#F4F9FF] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#1BACE1] disabled:bg-gray-100"
+                  
                 />
               </div>
 

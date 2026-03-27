@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/set-state-in-effect */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -6,6 +8,8 @@ import Image from "next/image";
 import profileImage from "@/public/Header/profileIcon.png";
 import laptopImage from '@/public/Dashboard/Ticket/lap.png';
 import DOcumentImage from '@/public/History/documentIcon.png';
+import { useTicket } from "@/app/hooks/useTicket";
+import { useCustomer } from "@/app/hooks/useCustomer";
 
 interface TabType {
   id: string;
@@ -21,8 +25,91 @@ const TABS: TabType[] = [
 
 export default function TicketDetailPage() {
   const params = useParams();
-  const ticketNumber = params.ticketNumber;
+  const ticketNumber : string = params.ticketNumber?.toString() || '';
   const [activeTab, setActiveTab] = useState("activite");
+  const { getTicketDetails, toggleTimer, getTimerStatus, loading: timerLoading } = useTicket();
+  const [ticket1, setTicket] = useState<any>(null);
+  console.log("ticket",ticket1);
+  const [customerDetails,setCustomerDetails] = useState<any>(null);
+  const [timerStatus, setTimerStatus] = useState<any>(null);
+  console.log("timerStatus",timerStatus);
+  
+  const [currentTime, setCurrentTime] = useState(0);
+
+    const {
+      fetchCustomerDetails,
+      loading: fetchLoading,
+      error: fetchError,
+    } = useCustomer();
+  
+
+  useEffect(() => {
+    const fetchTicket = async () => {
+      if (ticketNumber) {
+        const ticketId = parseInt(ticketNumber);
+        if (!isNaN(ticketId)) {
+          const result = await getTicketDetails(ticketId);
+          if (result.success && result.data) {
+            setTicket(result.data);
+          }
+        }
+      }
+    };
+
+    fetchTicket();
+  }, [ticketNumber, getTicketDetails]);
+
+  useEffect(() => {
+    const fetchDetails = async () => {
+      const details = await fetchCustomerDetails();
+      setCustomerDetails(details);
+      console.log("details", details);
+    };
+    fetchDetails();
+  }, [ticketNumber]);
+
+  // Fetch timer status
+  useEffect(() => {
+    const fetchTimerStatus = async () => {
+      if (ticketNumber) {
+        const ticketId = parseInt(ticketNumber);
+        if (!isNaN(ticketId)) {
+          const result = await getTimerStatus(ticketId);
+          if (result.success && result.data) {
+            setTimerStatus(result.data);
+          }
+        }
+      }
+    };
+
+    fetchTimerStatus();
+  }, [ticketNumber, getTimerStatus]);
+
+  // Update current time every second if timer is running
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    
+    const isRunning = timerStatus?.timerStatus === "running" || timerStatus?.canStop === true;
+    const isEnded = timerStatus?.timerStatus === "ended" || timerStatus?.timerStatus === "ended";
+    
+    if (isRunning) {
+      // Initialize with elapsed seconds from API
+      if (timerStatus?.elapsedSeconds && currentTime === 0) {
+        setCurrentTime(timerStatus.elapsedSeconds);
+      }
+      
+      // Continue incrementing
+      interval = setInterval(() => {
+        setCurrentTime((prev) => prev + 1);
+      }, 1000);
+    } else if (isEnded && timerStatus?.elapsedSeconds) {
+      setCurrentTime(timerStatus.elapsedSeconds);
+    }
+
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [timerStatus?.status, timerStatus?.timerStatus, timerStatus?.canStop, timerStatus?.elapsedSeconds]);
 
   // Sample ticket data - replace with API call
   const ticket = {
@@ -177,6 +264,8 @@ export default function TicketDetailPage() {
           <input
             type="text"
             placeholder="Dubuque"
+            disabled
+            value={customerDetails?.nom}
             className="w-full px-4 py-2 border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] text-[#8C8C8C]"
           />
         </div>
@@ -187,6 +276,8 @@ export default function TicketDetailPage() {
           <input
             type="text"
             placeholder="Efren"
+             disabled
+            value={customerDetails?.prenom}
             className="w-full px-4 py-2 border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] text-[#8C8C8C]"
           />
         </div>
@@ -197,6 +288,8 @@ export default function TicketDetailPage() {
           <input
             type="text"
             placeholder="Senior Mobility Specialist"
+            disabled
+            value={customerDetails?.societe}
             className="w-full px-4 py-2 border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] text-[#8C8C8C]"
           />
         </div>
@@ -207,6 +300,8 @@ export default function TicketDetailPage() {
           <input
             type="text"
             placeholder="https://ExceSelor/Mobilit/Specialist.net"
+             disabled
+            value={customerDetails?.site_web}
             className="w-full px-4 py-2 border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] text-[#8C8C8C]"
           />
         </div>
@@ -217,6 +312,8 @@ export default function TicketDetailPage() {
           <input
             type="text"
             placeholder="862-352-4409"
+            disabled
+            value={customerDetails?.telephone}
             className="w-full px-4 py-2 border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] text-[#8C8C8C]"
           />
         </div>
@@ -227,6 +324,8 @@ export default function TicketDetailPage() {
           <input
             type="text"
             placeholder="Julic.Hi@fa@ck.com"
+             disabled
+            value={customerDetails?.email}
             className="w-full px-4 py-2 border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] text-[#8C8C8C]"
           />
         </div>
@@ -240,6 +339,8 @@ export default function TicketDetailPage() {
         <input
           type="text"
           placeholder="315 Padi/ Mount East Schambergeripan chester Montengro"
+          disabled
+            value={customerDetails?.adresse}
           className="w-full px-4 py-2 border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] text-[#8C8C8C]"
         />
       </div>
@@ -253,6 +354,8 @@ export default function TicketDetailPage() {
           </label>
           <textarea
             placeholder="Enter description..."
+            disabled
+            value={ticket1?.description}
             className="w-full px-4 py-2 border border-[#9AA4EA] rounded-lg bg-[#F4F9FF] text-[#8C8C8C] h-20"
           />
         </div>
@@ -327,62 +430,71 @@ export default function TicketDetailPage() {
     </div>
   );
 
+  const handleToggleTimer = async () => {
+    if (ticketNumber) {
+      const ticketId = parseInt(ticketNumber);
+      if (!isNaN(ticketId)) {
+        setCurrentTime(0); // Reset to allow re-initialization from API
+        const result = await toggleTimer(ticketId);
+        if (result.success && result.data) {
+          setTimerStatus(result.data);
+        }
+      }
+    }
+  };
+
+  const formatTime = (seconds: number) => {
+    const h = Math.floor(seconds / 3600)
+      .toString()
+      .padStart(2, "0");
+    const m = Math.floor((seconds % 3600) / 60)
+      .toString()
+      .padStart(2, "0");
+    const s = (seconds % 60).toString().padStart(2, "0");
+    return `${h}:${m}:${s}`;
+  };
+
   return (
     <div className="min-h-screen pl-5 bg-[#F7FCFF]  p-4 sm:p-6 md:p-8 mb-6">
       <div className="max-w-4xl mx-auto 2xl:max-w-5xl 2xl:ml-16">
         {/* Header */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-5">
-          <div className="mb-8">
+          <div className=" flex justify-between mb-8">
             <h1 className="text-3xl sm:text-4xl font-bold text-[#024272] mb-2">
               Ticket {ticketNumber}
             </h1>
-            <span className="text-sm text-[#309DD7]">
-              Ouvert de 14h à 18h - Délais de réponse 4h
-            </span>
+            {/* Timer Section */}
+            <div className="flex items-center gap-4">
+              {/* {(!timerStatus || (timerStatus?.status !== "ended" && timerStatus?.timerStatus !== "ended")) && (
+                <button
+                  onClick={handleToggleTimer}
+                  disabled={timerLoading}
+                  className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
+                    timerStatus?.status === "running" || timerStatus?.canStop === true
+                      ? "bg-red-500 text-white hover:bg-red-600"
+                      : "bg-green-500 text-white hover:bg-green-600"
+                  } ${timerLoading ? "opacity-50 cursor-not-allowed" : ""}`}
+                >
+                  {timerLoading ? "..." : timerStatus?.status === "running" || timerStatus?.canStop === true ? "End" : "Start"}
+                </button>
+              )} */}
+              <span
+                className="flex items-center justify-center text-xl font-bold text-[#024272]"
+                style={{
+                  width: 278,
+                  height: 79,
+                  borderRadius: 10,
+                  backgroundColor: "#E6F4FF",
+                  opacity: 1,
+                }}
+              >
+                {formatTime(currentTime)}
+              </span>
+            </div>
           </div>
 
           {/* Description */}
-          <p className="text-[#0F0A32] text-sm leading-relaxed mb-2">
-            Lorem ipsum dolor sit amet consectetur. Ut ornare nam ipsum aenean
-            dictumst hac neque. Senectus lorem pharetra velit purus mattis quis
-            non a justo. Tellus non eu non lectus. Egestas pretium nunc amet
-            elementum.
-          </p>
-          <p className="text-[#0F0A32] text-sm leading-relaxed mb-2">
-            Elementum erat neque habitant ut id enim. Blandit fermentum aliquam
-            in pulvinar eleifend in sed aliquam risus. Mauris sed nunc magna in
-            enim ut tincidunt. In placerat mattis parturient lacus id eu. Risus
-            nulla phasellus volutpat id rhoncus. Quam non pharetra vestibulum
-            enim. Turpis ultrices viverra quam blandit lobortis orci. Egestas
-            vehicula vitae eget non eu. Enim diam laoreet vitae nam in. Etiam
-            pellentesque orci fusce gravida quisque sodales elementum.
-          </p>
-          <p className="text-[#0F0A32] text-sm leading-relaxed mb-2">
-            Nunc elementum tempor ullamcorper adipiscing facilisi eu. Varius ut
-            vitae orci ultrices libero morbi erat aliquet. Nunc lacus tempus
-            viverra duis vel sagittis. Accumsan nibh auctor libero sodales. Eget
-            vitae tortor porta semper hac enim gravida elementum bibendum.
-            Pulvinar suspendisse volutpat laoreet et facilisis eget. Mauris
-            natoque mauris magna mi euismod. Sapien aliquet orci nibh congue mi
-            eget rhoncus blandit accumsan. Magna sit curabitur dignissim risus.
-            Cursus lobortis suspendisse in convallis quis non in consequat at.
-            Sagittis id porta sed proin. Lectus elementum mi urna nisi. Gravida
-            neque nunc sed non amet blandit eros. Diam amet justo ultrices purus
-            bibendum. At et fames sed cras porta eget.
-          </p>
-          <p className="text-[#0F0A32] text-sm leading-relaxed mb-2">
-            Et aliquam enim dui cras adipiscing sed venenatis ligula. Ultrices
-            mi sapien nunc vulputate. Quam eget urna nulla rutrum ante. Est
-            congue interdum et sit. Senectus ut sit quis aliquam adipiscing at.
-            Id bibendum in ac donec sed erat magna proin. Orci mi tristique id
-            porta porttitor non elit ut et. Et augue varius consectetur id dui
-            tortor dolor adipiscing eget. Auctor porttitor augue ut quam eu
-            adipiscing malesuada. Id rutrum dui sed ac sagittis. Congue
-            ullamcorper urna feugiat dui montes ornare amet gravida adipiscing.
-            Pretium sed eros morbi semper enim nulla volutpat purus. Vitae sed
-            aliquam nibh at diam egestas aliquam feugiat. Arcu egestas amet
-            mauris nulla. Pellentesque euismod a dignissim vitae.
-          </p>
+          <p>{ticket1?.description}</p>
         </div>
 
         <div className="bg-white rounded-lg shadow-lg p-4">

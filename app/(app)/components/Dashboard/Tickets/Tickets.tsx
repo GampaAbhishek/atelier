@@ -47,7 +47,7 @@ const Tickets: React.FC = () => {
       description: ticket.description || ticket.sujet || '',
       status,
       comment: ticket.sujet || ticket.description || '',
-      image_url: ticket.piece_jointe ? `PJ : ${ticket.piece_jointe}` : undefined,
+      image_url: ticket.piece_jointe,
     };
   };
 
