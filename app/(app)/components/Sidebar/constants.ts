@@ -35,6 +35,12 @@ export const SIDEBAR_MENU_ITEMS: MenuItem[] = [
     path : '/indicateurs-sla',
   },
   {
+    id: 'historique',
+    label: 'Historique',
+    icon: historiqueIcon,
+    path : '/historique',
+  },
+  {
     id: 'mon-compte',
     label: 'Mon compte',
     icon: moncompteIcon,

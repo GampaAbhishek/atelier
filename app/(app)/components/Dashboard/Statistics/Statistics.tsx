@@ -36,7 +36,7 @@ const Statistics: React.FC = () => {
             label:  'Temps moyen de réponse',
             backgroundColor: 'bg-[#55B6E5]',
             tailwindColor: 'bg-blue-400',
-            time: apiData.data?.averageResponseTime || '4h',
+            time: apiData.data?.averageResponseTime ?? '4h',
           },
           {
             id: 'response-dark',
@@ -50,14 +50,14 @@ const Statistics: React.FC = () => {
             label:  'Nombre de tickets ouverts',
             backgroundColor: 'bg-[#3C77AE]',
             tailwindColor: 'bg-blue-200',
-            time: String(apiData.data?.openTickets || '5'),
+            time: String(apiData.data?.openTickets ?? '5'),
           },
           {
             id: 'response-medium',
             label:  'Nombre de tickets résolus',
             backgroundColor: 'bg-[#309DD7]',
             tailwindColor: 'bg-blue-500',
-            time: String(apiData.data?.resolvedTickets || '10'),
+            time: String(apiData.data?.resolvedTickets ?? '10'),
           },
         ];
         

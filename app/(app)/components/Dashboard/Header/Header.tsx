@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, useCallback, useState } from "react";
+import { memo, useCallback, useEffect, useState } from "react";
 import HeaderGreeting from "./HeaderGreeting";
 import HeaderActions from "./HeaderActions";
 import LanguageSelector from "./LanguageSelector";
@@ -13,11 +13,30 @@ import {
 } from "./headerConstants";
 import { useRouter } from "next/navigation";
 import { CookieManager } from "@/app/utils/CookieManager";
+import { useCustomer } from "@/app/hooks/useCustomer";
 
 const Header = memo(() => {
   const [currentLanguage, setCurrentLanguage] = useState(LANGUAGE_OPTIONS[0]); // Default to first language
+  const [userName, setUserName] = useState({
+    firstName: DEFAULT_USER.firstName,
+    lastName: DEFAULT_USER.lastName,
+  });
 
   const route = useRouter();
+  const { fetchCustomerDetails } = useCustomer();
+
+  useEffect(() => {
+    const loadUser = async () => {
+      const details = await fetchCustomerDetails();
+      if (details) {
+        setUserName({
+          firstName: details.prenom || DEFAULT_USER.firstName,
+          lastName: details.nom || DEFAULT_USER.lastName,
+        });
+      }
+    };
+    loadUser();
+  }, [fetchCustomerDetails]);
 
   const handleLanguageChange = useCallback((languageCode: string) => {
     // TODO: Implement language change logic
@@ -69,8 +88,8 @@ const Header = memo(() => {
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between px-4 py-4 md:px-8 md:py-5">
         {/* Left Section: Greeting */}
         <HeaderGreeting
-          firstName={DEFAULT_USER.firstName}
-          lastName={DEFAULT_USER.lastName}
+          firstName={userName.firstName}
+          lastName={userName.lastName}
         />
 
         {/* Right Section: Actions, Language, Profile */}
@@ -92,7 +111,7 @@ const Header = memo(() => {
           {/* Profile Dropdown */}
           <ProfileDropdown
             profileImage={DEFAULT_USER.profileImage}
-            userName={`${DEFAULT_USER.firstName} ${DEFAULT_USER.lastName}`}
+            userName={`${userName.firstName} ${userName.lastName}`}
             profileOptions={PROFILE_MENU_OPTIONS}
             onOptionSelect={handleProfileOptionSelect}
           />
